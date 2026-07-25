@@ -12,39 +12,50 @@
 <style>
   .deck-wrap { max-width: 1120px; margin: 0 auto; padding: 24px 24px 80px; }
   .deck-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
-  .deck-head .t { font-size: 14px; color: var(--text-3); max-width: 60ch; }
+  .deck-head .t { font-size: 14px; color: var(--text-3); max-width: 62ch; }
   .slides { display: flex; flex-direction: column; gap: 26px; }
   .slide {
     aspect-ratio: 16 / 9; width: 100%;
     background: #0f1218; border: 1px solid var(--border); border-radius: 16px;
-    padding: 6% 6.8%; position: relative; overflow: hidden;
+    padding: 5.4% 6.4%; position: relative; overflow: hidden;
     display: flex; flex-direction: column;
   }
   .slide .sg { position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none; z-index: 0; }
-  .slide .sg1 { width: 48%; height: 84%; top: -28%; right: -8%; background: radial-gradient(circle, rgba(49,130,246,0.26) 0%, transparent 66%); }
+  .slide .sg1 { width: 48%; height: 84%; top: -28%; right: -8%; background: radial-gradient(circle, rgba(49,130,246,0.24) 0%, transparent 66%); }
   .slide > * { position: relative; z-index: 1; }
-  .slide .lab { font-size: clamp(11px, 1.25vw, 14px); font-weight: 600; color: var(--blue-br); margin-bottom: 2.4%; }
-  .slide h2 { font-size: clamp(1.1rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.3; margin: 0 0 2.4%; }
-  .slide p, .slide li { font-size: clamp(0.74rem, 1.5vw, 1rem); color: var(--text-2); line-height: 1.7; }
+  .slide .lab { font-size: clamp(11px, 1.2vw, 14px); font-weight: 600; color: var(--blue-br); margin-bottom: 2%; }
+  .slide h2 { font-size: clamp(1.05rem, 2.9vw, 1.95rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.28; margin: 0 0 2%; }
+  .slide p, .slide li { font-size: clamp(0.72rem, 1.45vw, 0.98rem); color: var(--text-2); line-height: 1.66; margin: 0; }
   .slide.cover { justify-content: center; }
-  .slide.cover h1 { font-size: clamp(1.5rem, 4.4vw, 2.9rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.28; margin: 0 0 3%; }
-  .slide.cover .who { color: var(--text-3); font-size: clamp(0.82rem, 1.55vw, 1.05rem); }
-  .s-cards { display: grid; gap: 2.2%; grid-template-columns: repeat(3, 1fr); margin-top: auto; }
+  .slide.cover h1 { font-size: clamp(1.5rem, 4.2vw, 2.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.28; margin: 0 0 3%; }
+  .slide.cover .who { color: var(--text-3); font-size: clamp(0.82rem, 1.5vw, 1.05rem); }
+
+  .s-cards { display: grid; gap: 2.4%; grid-template-columns: repeat(3, 1fr); margin-top: auto; }
   .s-cards.c2 { grid-template-columns: 1fr 1fr; }
-  .s-card { background: var(--card); border: 1px solid var(--border-2); border-radius: 12px; padding: 3.6% 4%; }
-  .s-card.hi { background: linear-gradient(160deg, rgba(49,130,246,0.13), var(--card)); border-color: rgba(49,130,246,0.34); }
-  .s-card h4 { margin: 0 0 3.5%; font-size: clamp(0.8rem, 1.55vw, 1.05rem); color: var(--text); }
+  .s-card { background: var(--card); border: 1px solid var(--border-2); border-radius: 12px; padding: 3.4% 3.8%; }
+  .s-card.hi { background: linear-gradient(160deg, rgba(49,130,246,0.14), var(--card)); border-color: rgba(49,130,246,0.34); }
+  .s-card h4 { margin: 0 0 3%; font-size: clamp(0.78rem, 1.5vw, 1.02rem); color: var(--text); }
   .s-card.hi h4 { color: var(--blue-br); }
-  .s-card p { font-size: clamp(0.68rem, 1.32vw, 0.9rem); margin: 0; }
+  .s-card p { font-size: clamp(0.66rem, 1.28vw, 0.88rem); color: var(--text-2); }
+
   .s-flow { display: flex; align-items: center; margin: auto 0; }
-  .s-node { flex: 0 0 auto; width: 15%; aspect-ratio: 1; border-radius: 50%; background: var(--card); border: 1px solid var(--border-2); display: flex; align-items: center; justify-content: center; text-align: center; font-size: clamp(0.6rem, 1.25vw, 0.9rem); color: var(--text); padding: 2%; line-height: 1.35; word-break: keep-all; }
+  .s-node { flex: 0 0 auto; width: 15%; aspect-ratio: 1; border-radius: 50%; background: var(--card); border: 1px solid var(--border-2); display: flex; align-items: center; justify-content: center; text-align: center; font-size: clamp(0.6rem, 1.2vw, 0.88rem); color: var(--text); padding: 2%; line-height: 1.32; word-break: keep-all; }
   .s-node.hl { background: linear-gradient(150deg, var(--blue), var(--blue-dk)); color: #fff; border: 0; font-weight: 700; }
-  .s-arrow { flex: 1; height: 1.5px; background: var(--border-2); position: relative; margin: 0 1.3%; }
+  .s-arrow { flex: 1; height: 1.5px; background: var(--border-2); position: relative; margin: 0 1.2%; }
   .s-arrow::after { content:''; position:absolute; right:-1px; top:-4px; border-left: 7px solid var(--border-2); border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+
   .s-grad { background: linear-gradient(102deg, var(--blue), var(--blue-br)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .slide .pgn { position: absolute; bottom: 4%; right: 5%; font-size: clamp(9px,1vw,12px); color: var(--text-3); z-index: 1; }
-  .slide .shot { border-radius: 10px; overflow: hidden; border: 1px solid var(--border-2); margin-top: auto; box-shadow: 0 12px 34px rgba(0,0,0,0.4); }
-  .slide .shot img { width: 100%; display: block; max-height: 60%; object-fit: cover; object-position: top; }
+  .slide .pgn { position: absolute; bottom: 3.6%; right: 4.6%; font-size: clamp(9px,1vw,12px); color: var(--text-3); z-index: 1; }
+
+  /* image fills remaining space, cropped cleanly */
+  .shot { flex: 1 1 auto; min-height: 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-2); margin-top: 2.4%; box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .s-two { display: grid; grid-template-columns: 1fr 1fr; gap: 3.4%; margin-top: auto; flex: 1 1 auto; min-height: 0; padding-top: 2%; }
+  .s-cell { min-height: 0; display: flex; flex-direction: column; gap: 4%; }
+  .s-browser { flex: 1 1 auto; min-height: 0; border-radius: 9px; overflow: hidden; border: 1px solid var(--border-2); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+  .s-browser img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .cap { font-size: clamp(0.6rem, 1.05vw, 0.78rem); color: var(--text-3); margin-top: 2.5%; }
+
   @media print {
     @page { size: 297mm 167mm; margin: 0; }
     .nav, footer, .deck-head { display: none !important; }
@@ -65,11 +76,12 @@
 <main class="page">
   <div class="deck-wrap">
     <div class="deck-head">
-      <div class="t">발표용 슬라이드 9장. 아래 버튼을 누르면 인쇄 대화상자에서 PDF로 저장할 수 있습니다 (배경 그래픽 옵션을 켜세요).</div>
+      <div class="t">발표용 슬라이드 11장. 아래 버튼을 누르면 인쇄 대화상자에서 PDF로 저장할 수 있습니다 (배경 그래픽 옵션을 켜세요).</div>
       <button class="btn" onclick="window.print()">PDF로 저장 / 인쇄</button>
     </div>
     <div class="slides">
 
+      <!-- 01 cover -->
       <section class="slide cover">
         <div class="sg sg1"></div>
         <div class="lab">Portfolio</div>
@@ -78,6 +90,7 @@
         <div class="pgn">01</div>
       </section>
 
+      <!-- 02 about + index -->
       <section class="slide">
         <div class="lab">소개</div>
         <h2>지수 회사의 핵심 업무를 <span class="s-grad">AI로 전환</span>해왔습니다</h2>
@@ -90,14 +103,29 @@
         <div class="pgn">02</div>
       </section>
 
+      <!-- 03 P01 title + hero shot -->
       <section class="slide">
         <div class="lab">Project 01 · FnAIDX</div>
-        <h2>수작업이던 지수 개발을 하나의 파이프라인으로</h2>
-        <p>테마 발굴부터 종목 선정, 검증까지 담당자 개인의 수작업에 묶여 있었고, 결과는 개인 문서로만 남았습니다. 사람이 판단할 일과 기계가 처리할 일을 분리해 하나의 파이프라인으로 다시 설계했습니다.</p>
-        <div class="shot"><img src="/assets/img/home.jpg" alt="FnAIDX 대시보드"></div>
+        <h2>AI 지수 개발 플랫폼 구축</h2>
+        <p>반도체 · 바이오 · 방산 등 테마 지수 개발 과정을 AI로 전환한 플랫폼 · 2026.01 ~ 2026.07 · aidx.fnguide.com</p>
+        <div class="shot"><img src="/assets/img/home.jpg" alt="FnAIDX 지수 대시보드"></div>
         <div class="pgn">03</div>
       </section>
 
+      <!-- 04 P01 problem -->
+      <section class="slide">
+        <div class="lab">Project 01 · 문제</div>
+        <h2>수작업과 경험에 묶여 있던 지수 개발</h2>
+        <p>테마 발굴부터 종목 선정, 검증까지 담당자 개인의 수작업에 묶여 있어 속도와 일관성 모두 한계가 있었고, 분석 결과는 개인 문서로만 남아 조직의 자산이 되지 못했습니다.</p>
+        <div class="s-cards" style="margin-top:auto;">
+          <div class="s-card"><h4>수작업 의존</h4><p>테마 발굴부터 검증까지 소수 담당자의 경험에 의존. 담당자가 바뀌면 기준도 바뀜</p></div>
+          <div class="s-card"><h4>축적되지 않는 결과</h4><p>분석 결과가 개인 PC 문서로만 존재. 조직에는 아무것도 남지 않음</p></div>
+          <div class="s-card hi"><h4>문제의 재정의</h4><p>사람이 판단할 일과 기계가 처리할 일을 분리하면 하나의 파이프라인으로 묶을 수 있다</p></div>
+        </div>
+        <div class="pgn">04</div>
+      </section>
+
+      <!-- 05 P01 pipeline -->
       <section class="slide">
         <div class="lab">Project 01 · 파이프라인</div>
         <h2>후보를 넓게 찾고, 검증으로 좁힙니다</h2>
@@ -109,65 +137,104 @@
           <div class="s-node hl">LLM<br>검증</div>
         </div>
         <div class="s-cards" style="margin-top:auto;">
-          <div class="s-card"><h4>API 서빙</h4><p>FastAPI 기반 REST API로 개발</p></div>
-          <div class="s-card"><h4>화면 연동</h4><p>React 프론트엔드와 연동</p></div>
-          <div class="s-card"><h4>배포 · 운영</h4><p>Linux 서버에서 Docker로 운영</p></div>
-        </div>
-        <div class="pgn">04</div>
-      </section>
-
-      <section class="slide">
-        <div class="lab">Project 01 · 성과</div>
-        <h2>AI로 개발한 지수가 <span class="s-grad">상장 심사</span>를 진행 중입니다</h2>
-        <div class="s-cards" style="margin-top:auto;">
-          <div class="s-card hi"><h4>상장 심사 진행 중</h4><p>통과 시 이후 지수도 같은 방식으로 개발</p></div>
-          <div class="s-card"><h4>fnindex.co.kr 개편</h4><p>메일 업무를 화면과 기능으로 전환</p></div>
-          <div class="s-card"><h4>개발 속도 · 운영</h4><p>팀은 만드는 일보다 판단하는 일에 집중</p></div>
+          <div class="s-card"><h4>API 서빙</h4><p>파이프라인 전 기능을 FastAPI 기반 REST API로 개발</p></div>
+          <div class="s-card"><h4>화면 연동</h4><p>React 프론트엔드에서 실험 설정부터 결과 확인까지</p></div>
+          <div class="s-card"><h4>배포 · 운영</h4><p>Linux 서버에서 Docker 기반으로 직접 운영</p></div>
         </div>
         <div class="pgn">05</div>
       </section>
 
+      <!-- 06 P01 screens -->
+      <section class="slide">
+        <div class="lab">Project 01 · 화면</div>
+        <h2>실험 설정부터 근거 추적까지</h2>
+        <div class="s-two">
+          <div class="s-cell">
+            <div class="s-browser"><img src="/assets/img/sim.jpg" alt="시뮬레이션 실험 설정"></div>
+            <div class="cap">시뮬레이션 실험 설정 · 기간과 테마 키워드를 정의하면 지수 생성이 시작됩니다</div>
+          </div>
+          <div class="s-cell">
+            <div class="s-browser"><img src="/assets/img/src.jpg" alt="LLM 기업 개요와 출처"></div>
+            <div class="cap">LLM 생성 기업 개요와 출처 236건 · 모든 결과를 원문으로 근거 추적</div>
+          </div>
+        </div>
+        <div class="pgn">06</div>
+      </section>
+
+      <!-- 07 P01 result -->
+      <section class="slide">
+        <div class="lab">Project 01 · 성과</div>
+        <h2>AI로 개발한 지수가 <span class="s-grad">상장 심사</span>를 진행 중입니다</h2>
+        <div class="s-two">
+          <div class="s-cell">
+            <div class="s-card hi"><h4>상장 심사 진행 중</h4><p>통과하면 이후 지수도 같은 방식으로 개발됩니다</p></div>
+            <div class="s-card"><h4>fnindex.co.kr 개편 · 운영</h4><p>메일 업무를 화면과 기능으로 옮기고, 유지·관리까지 플랫폼이 담당</p></div>
+          </div>
+          <div class="s-cell">
+            <div class="s-browser"><img src="/assets/img/perf.jpg" alt="지수 성과분석"></div>
+            <div class="cap">생성된 지수의 성과분석 · 수익률과 리스크 지표를 벤치마크와 비교</div>
+          </div>
+        </div>
+        <div class="pgn">07</div>
+      </section>
+
+      <!-- 08 P02 theme -->
       <section class="slide">
         <div class="lab">Project 02 · 테마 대시보드</div>
         <h2>LLM으로 부상 중인 테마를 선제 발굴</h2>
-        <p>뉴스, 공시, 리포트에서 LLM으로 테마 키워드를 추출하고, 언급량과 관련 종목 수익률로 지표화하는 대시보드를 프론트엔드부터 서버, DB까지 단독으로 구축했습니다. 추출된 테마는 인덱스개발팀의 AI 테마 지수 개발에도 활용됩니다.</p>
+        <p>증권 리포트 기반 서비스 '리타민'의 테마를 뉴스·공시·리포트에서 LLM으로 추출하고 언급량·수익률로 지표화하는 대시보드를 프론트엔드부터 서버, DB까지 단독 구축했습니다.</p>
         <div class="s-flow" style="margin:auto 0;">
           <div class="s-node">뉴스 · 공시<br>리포트</div><div class="s-arrow"></div>
           <div class="s-node">LLM 키워드<br>추출</div><div class="s-arrow"></div>
           <div class="s-node">지표<br>계산</div><div class="s-arrow"></div>
           <div class="s-node hl">테마<br>대시보드</div>
         </div>
-        <div class="pgn">06</div>
-      </section>
-
-      <section class="slide">
-        <div class="lab">Project 03 · 기업개요 생성</div>
-        <h2>사람이 쓰던 기업개요를 <span class="s-grad">완전 AI 전환</span></h2>
-        <p>네이버증권에 제공하는 기업개요를 LLM 생성과 Human-in-the-Loop 검증 체계로 전환했습니다. 현재는 전 과정이 AI 작성으로 운영됩니다.</p>
-        <div class="s-cards c2" style="margin-top:auto;">
-          <div class="s-card hi"><h4>기간 1/4</h4><p>분기당 1개월에서 1주일로 (검증 포함)</p></div>
-          <div class="s-card hi"><h4>비용 90% 절감</h4><p>분기당 500만원에서 LLM 토큰 비용 50만원으로</p></div>
-        </div>
-        <div class="pgn">07</div>
-      </section>
-
-      <section class="slide">
-        <div class="lab">일하는 방식</div>
-        <h2>설계부터 운영까지, <span class="s-grad">AI와 함께</span></h2>
-        <div class="s-cards c2" style="margin-top:auto;">
-          <div class="s-card"><h4>Claude Code 중심의 개발</h4><p>반복 구현은 에이전트에 맡기고, 문제 정의와 구조 설계, 결과 검증에 집중합니다. 이 방식을 파트에 정착시켜 파트 전체의 개발 속도를 끌어올렸습니다.</p></div>
-          <div class="s-card"><h4>현업이 계속 쓰는 구조</h4><p>비개발 직군이 AI의 결과를 검토하고 수정하며, 그 수정이 다시 시스템에 반영되게 했을 때 비로소 AI가 업무의 일부가 됐습니다.</p></div>
+        <div class="s-cards" style="margin-top:auto;">
+          <div class="s-card"><h4>선제 발굴</h4><p>언급량과 관련 종목 수익률로 부상 테마 포착</p></div>
+          <div class="s-card"><h4>단독 수행</h4><p>API · React · 서버 · DB 전 영역 담당</p></div>
+          <div class="s-card"><h4>조직 자산으로</h4><p>추출 테마를 AI 테마 지수 개발에 활용</p></div>
         </div>
         <div class="pgn">08</div>
       </section>
 
+      <!-- 09 P03 overview -->
+      <section class="slide">
+        <div class="lab">Project 03 · 기업개요 생성</div>
+        <h2>사람이 쓰던 기업개요를 <span class="s-grad">완전 AI 전환</span></h2>
+        <p>네이버증권에 제공하는 기업개요를 LLM 생성과 Human-in-the-Loop 검증 체계로 전환했습니다. 현재는 전 과정이 AI 작성으로 운영됩니다.</p>
+        <div class="s-flow" style="margin:auto 0;">
+          <div class="s-node">공시<br>텍스트</div><div class="s-arrow"></div>
+          <div class="s-node">LLM 분석<br>· 생성</div><div class="s-arrow"></div>
+          <div class="s-node hl">Human-in-<br>the-Loop</div><div class="s-arrow"></div>
+          <div class="s-node">네이버증권<br>제공</div>
+        </div>
+        <div class="s-cards" style="margin-top:auto;">
+          <div class="s-card hi"><h4>기간 1/4</h4><p>분기당 1개월에서 1주일로 (검증 포함)</p></div>
+          <div class="s-card hi"><h4>비용 90% 절감</h4><p>분기당 500만원에서 토큰 비용 50만원</p></div>
+          <div class="s-card"><h4>완전 전환</h4><p>전 과정이 AI 작성 체계로 운영 중</p></div>
+        </div>
+        <div class="pgn">09</div>
+      </section>
+
+      <!-- 10 skills -->
+      <section class="slide">
+        <div class="lab">일하는 방식</div>
+        <h2>설계부터 운영까지, <span class="s-grad">AI와 함께</span></h2>
+        <div class="s-cards c2" style="margin-top:auto;">
+          <div class="s-card"><h4>Claude Code 중심의 개발</h4><p>반복 구현은 에이전트에 맡기고 문제 정의와 구조 설계, 결과 검증에 집중합니다. 이 방식을 파트에 정착시켜 파트 전체의 개발 속도를 끌어올렸습니다.</p></div>
+          <div class="s-card"><h4>현업이 계속 쓰는 구조</h4><p>비개발 직군이 AI의 결과를 검토·수정하고 그 수정이 다시 시스템에 반영되게 했을 때 비로소 AI가 업무의 일부가 됐습니다.</p></div>
+        </div>
+        <div class="pgn">10</div>
+      </section>
+
+      <!-- 11 closing -->
       <section class="slide cover">
         <div class="sg sg1"></div>
         <div class="lab">What I Believe</div>
-        <h2 style="font-size:clamp(1.3rem,4.2vw,2.6rem);">진짜 문제를 풀고,<br><span class="s-grad">끝까지 책임지는</span> 사람이고 싶습니다</h2>
+        <h2 style="font-size:clamp(1.3rem,4vw,2.5rem);">진짜 문제를 풀고,<br><span class="s-grad">끝까지 책임지는</span> 사람이고 싶습니다</h2>
         <p style="max-width:78%;">한 회사의 핵심 업무를 AI로 바꾸며 배운 것을, 더 많은 사람이 매일 쓰는 프로덕트에서 이어가고 싶습니다.</p>
         <div class="who" style="margin-top:3%;">박재성 · bbba2418@naver.com</div>
-        <div class="pgn">09</div>
+        <div class="pgn">11</div>
       </section>
 
     </div>
