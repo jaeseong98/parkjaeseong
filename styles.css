@@ -81,6 +81,8 @@ img { max-width: 100%; }
 
 /* sections */
 section { padding: clamp(60px, 9vw, 108px) 0; position: relative; }
+/* network shows only in hero + side gutters: cover the center content column */
+section, footer { background: linear-gradient(90deg, transparent calc(50% - 560px), var(--bg) calc(50% - 560px), var(--bg) calc(50% + 560px), transparent calc(50% + 560px)); }
 .sec-label { font-size: 15.5px; font-weight: 600; color: var(--text-2); margin-bottom: 16px; }
 h1 { font-weight: 800; letter-spacing: -0.04em; margin: 0; }
 h2 { font-size: clamp(1.55rem, 3.3vw, 2.25rem); font-weight: 800; letter-spacing: -0.032em; line-height: 1.34; margin: 0 0 18px; text-wrap: balance; }

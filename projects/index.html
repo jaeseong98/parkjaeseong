@@ -89,14 +89,14 @@
   var actx, master, started=false, playing=false;
   function init(){ var AC=window.AudioContext||window.webkitAudioContext; if(!AC) return false;
     actx=new AC(); master=actx.createGain(); master.gain.value=0; master.connect(actx.destination);
-    var filt=actx.createBiquadFilter(); filt.type='lowpass'; filt.frequency.value=680; filt.Q.value=5; filt.connect(master);
-    [55,82.41,110,164.81,220].forEach(function(f,i){ var o=actx.createOscillator(); o.type=(i%2)?'sine':'triangle'; o.frequency.value=f;
-      var g=actx.createGain(); g.gain.value=0.13/(i+1); o.connect(g); g.connect(filt); o.start();
-      var dt=actx.createOscillator(); dt.frequency.value=0.05+i*0.03; var dg=actx.createGain(); dg.gain.value=1.6; dt.connect(dg); dg.connect(o.detune); dt.start(); });
-    var lfo=actx.createOscillator(); lfo.frequency.value=0.06; var lg=actx.createGain(); lg.gain.value=280; lfo.connect(lg); lg.connect(filt.frequency); lfo.start();
+    var filt=actx.createBiquadFilter(); filt.type='lowpass'; filt.frequency.value=1500; filt.Q.value=3; filt.connect(master);
+    [130.81,196,261.63,329.63,392].forEach(function(f,i){ var o=actx.createOscillator(); o.type=(i%2)?'sine':'triangle'; o.frequency.value=f;
+      var g=actx.createGain(); g.gain.value=0.08/(1+i*0.5); o.connect(g); g.connect(filt); o.start();
+      var dt=actx.createOscillator(); dt.frequency.value=0.05+i*0.03; var dg=actx.createGain(); dg.gain.value=2.2; dt.connect(dg); dg.connect(o.detune); dt.start(); });
+    var lfo=actx.createOscillator(); lfo.frequency.value=0.08; var lg=actx.createGain(); lg.gain.value=520; lfo.connect(lg); lg.connect(filt.frequency); lfo.start();
     started=true; return true; }
   function set(on){ if(on && !started){ if(!init()) return; } if(actx && actx.state==='suspended') actx.resume();
-    playing=on; var t=actx?actx.currentTime:0; if(master){ master.gain.cancelScheduledValues(t); master.gain.linearRampToValueAtTime(on?0.085:0, t+(on?1.4:0.7)); }
+    playing=on; var t=actx?actx.currentTime:0; if(master){ master.gain.cancelScheduledValues(t); master.gain.linearRampToValueAtTime(on?0.22:0, t+(on?1.4:0.7)); }
     btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on?'true':'false'); try{ localStorage.setItem('snd', on?'1':'0'); }catch(e){} }
   btn.addEventListener('click', function(){ set(!playing); });
   try{ if(localStorage.getItem('snd')==='1'){ var r=function(){ set(true); window.removeEventListener('pointerdown',r); }; window.addEventListener('pointerdown', r, {once:true}); } }catch(e){}
