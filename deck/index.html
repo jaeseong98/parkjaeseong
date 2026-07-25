@@ -4,51 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Deck | 박재성</title>
-<meta name="description" content="박재성 포트폴리오 발표용 슬라이드 — PDF 저장 가능">
+<meta name="description" content="박재성 포트폴리오 발표용 슬라이드. PDF로 저장할 수 있습니다.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/styles.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
 <style>
-  .deck-wrap { max-width: 1120px; margin: 0 auto; padding: 30px 24px 80px; }
-  .deck-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 26px; }
-  .deck-head .t { font-size: 14px; color: var(--text-3); }
+  .deck-wrap { max-width: 1120px; margin: 0 auto; padding: 24px 24px 80px; }
+  .deck-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
+  .deck-head .t { font-size: 14px; color: var(--text-3); max-width: 60ch; }
   .slides { display: flex; flex-direction: column; gap: 26px; }
   .slide {
     aspect-ratio: 16 / 9; width: 100%;
     background: #0f1218; border: 1px solid var(--border); border-radius: 16px;
-    padding: 6.2% 7%; position: relative; overflow: hidden;
+    padding: 6% 6.8%; position: relative; overflow: hidden;
     display: flex; flex-direction: column;
   }
-  .slide .glow { position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none; z-index: 0; }
-  .slide .sg1 { width: 46%; height: 80%; top: -30%; right: -8%; background: radial-gradient(circle, rgba(49,130,246,0.28) 0%, transparent 66%); }
+  .slide .sg { position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none; z-index: 0; }
+  .slide .sg1 { width: 48%; height: 84%; top: -28%; right: -8%; background: radial-gradient(circle, rgba(49,130,246,0.26) 0%, transparent 66%); }
   .slide > * { position: relative; z-index: 1; }
-  .slide .lab { font-size: clamp(10px, 1.2vw, 13px); letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-br); font-weight: 600; margin-bottom: 2.5%; }
-  .slide h2 { font-size: clamp(1.1rem, 3.1vw, 2.1rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.3; margin: 0 0 2.5%; }
-  .slide p, .slide li { font-size: clamp(0.72rem, 1.55vw, 1rem); color: var(--text-2); line-height: 1.7; }
+  .slide .lab { font-size: clamp(11px, 1.25vw, 14px); font-weight: 600; color: var(--blue-br); margin-bottom: 2.4%; }
+  .slide h2 { font-size: clamp(1.1rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.3; margin: 0 0 2.4%; }
+  .slide p, .slide li { font-size: clamp(0.74rem, 1.5vw, 1rem); color: var(--text-2); line-height: 1.7; }
   .slide.cover { justify-content: center; }
-  .slide.cover h1 { font-size: clamp(1.5rem, 4.6vw, 3rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.28; margin: 0 0 3%; }
-  .slide.cover .who { color: var(--text-3); font-size: clamp(0.8rem, 1.6vw, 1.05rem); }
+  .slide.cover h1 { font-size: clamp(1.5rem, 4.4vw, 2.9rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.28; margin: 0 0 3%; }
+  .slide.cover .who { color: var(--text-3); font-size: clamp(0.82rem, 1.55vw, 1.05rem); }
   .s-cards { display: grid; gap: 2.2%; grid-template-columns: repeat(3, 1fr); margin-top: auto; }
   .s-cards.c2 { grid-template-columns: 1fr 1fr; }
-  .s-card { background: var(--card); border: 1px solid var(--border-2); border-radius: 12px; padding: 4% 4.5%; }
-  .s-card.hi { background: linear-gradient(160deg, rgba(49,130,246,0.12), var(--card)); border-color: rgba(49,130,246,0.34); }
-  .s-card h4 { margin: 0 0 4%; font-size: clamp(0.78rem, 1.6vw, 1.05rem); color: var(--text); }
+  .s-card { background: var(--card); border: 1px solid var(--border-2); border-radius: 12px; padding: 3.6% 4%; }
+  .s-card.hi { background: linear-gradient(160deg, rgba(49,130,246,0.13), var(--card)); border-color: rgba(49,130,246,0.34); }
+  .s-card h4 { margin: 0 0 3.5%; font-size: clamp(0.8rem, 1.55vw, 1.05rem); color: var(--text); }
   .s-card.hi h4 { color: var(--blue-br); }
-  .s-card p { font-size: clamp(0.66rem, 1.35vw, 0.9rem); margin: 0; }
+  .s-card p { font-size: clamp(0.68rem, 1.32vw, 0.9rem); margin: 0; }
   .s-flow { display: flex; align-items: center; margin: auto 0; }
-  .s-node { flex: 0 0 auto; width: 15%; aspect-ratio: 1; border-radius: 50%; background: var(--card); border: 1px solid var(--border-2); display: flex; align-items: center; justify-content: center; text-align: center; font-size: clamp(0.6rem, 1.3vw, 0.9rem); color: var(--text); padding: 2%; line-height: 1.35; word-break: keep-all; }
+  .s-node { flex: 0 0 auto; width: 15%; aspect-ratio: 1; border-radius: 50%; background: var(--card); border: 1px solid var(--border-2); display: flex; align-items: center; justify-content: center; text-align: center; font-size: clamp(0.6rem, 1.25vw, 0.9rem); color: var(--text); padding: 2%; line-height: 1.35; word-break: keep-all; }
   .s-node.hl { background: linear-gradient(150deg, var(--blue), var(--blue-dk)); color: #fff; border: 0; font-weight: 700; }
-  .s-arrow { flex: 1; height: 1.5px; background: var(--border-2); position: relative; margin: 0 1.4%; }
+  .s-arrow { flex: 1; height: 1.5px; background: var(--border-2); position: relative; margin: 0 1.3%; }
   .s-arrow::after { content:''; position:absolute; right:-1px; top:-4px; border-left: 7px solid var(--border-2); border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
   .s-grad { background: linear-gradient(102deg, var(--blue), var(--blue-br)); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .slide .pgn { position: absolute; bottom: 4%; right: 5%; font-size: clamp(9px,1vw,12px); color: var(--text-3); z-index: 1; }
   .slide .shot { border-radius: 10px; overflow: hidden; border: 1px solid var(--border-2); margin-top: auto; box-shadow: 0 12px 34px rgba(0,0,0,0.4); }
-  .slide .shot img { width: 100%; display: block; max-height: 62%; }
-
+  .slide .shot img { width: 100%; display: block; max-height: 60%; object-fit: cover; object-position: top; }
   @media print {
     @page { size: 297mm 167mm; margin: 0; }
-    .nav, footer, .deck-head, .print-hint { display: none !important; }
+    .nav, footer, .deck-head { display: none !important; }
     body { background: #0f1218; }
     .page { padding-top: 0; }
     .deck-wrap { max-width: none; margin: 0; padding: 0; }
@@ -66,13 +65,13 @@
 <main class="page">
   <div class="deck-wrap">
     <div class="deck-head">
-      <div class="t">발표용 슬라이드 · 8장 · <span class="print-hint">“PDF로 저장”을 누르면 인쇄 대화상자에서 PDF로 저장할 수 있습니다 (배경 그래픽 켜기)</span></div>
+      <div class="t">발표용 슬라이드 9장. 아래 버튼을 누르면 인쇄 대화상자에서 PDF로 저장할 수 있습니다 (배경 그래픽 옵션을 켜세요).</div>
       <button class="btn" onclick="window.print()">PDF로 저장 / 인쇄</button>
     </div>
     <div class="slides">
 
       <section class="slide cover">
-        <div class="glow sg1"></div>
+        <div class="sg sg1"></div>
         <div class="lab">Portfolio</div>
         <h1>문제를 다시 정의하는 순간,<br>결과가 <span class="s-grad">달라진다</span>고 믿습니다</h1>
         <div class="who">박재성 · AI Native Product Builder · bbba2418@naver.com</div>
@@ -80,7 +79,7 @@
       </section>
 
       <section class="slide">
-        <div class="lab">About</div>
+        <div class="lab">소개</div>
         <h2>지수 회사의 핵심 업무를 <span class="s-grad">AI로 전환</span>해왔습니다</h2>
         <p>에프앤가이드 AI팀 AX 파트장. 회사의 핵심 비즈니스인 지수 개발을 AI 중심으로 전환해왔고, 파이프라인 설계부터 FastAPI 백엔드, React 프론트엔드, Linux 서버 운영까지 직접 만들었습니다. 기술 도입보다 현업이 계속 쓰는 구조를 만드는 것이 AI 전환이라고 생각합니다.</p>
         <div class="s-cards" style="margin-top:auto;">
@@ -100,7 +99,7 @@
       </section>
 
       <section class="slide">
-        <div class="lab">Project 01 · Pipeline</div>
+        <div class="lab">Project 01 · 파이프라인</div>
         <h2>후보를 넓게 찾고, 검증으로 좁힙니다</h2>
         <div class="s-flow">
           <div class="s-node">데이터<br>수집</div><div class="s-arrow"></div>
@@ -110,20 +109,20 @@
           <div class="s-node hl">LLM<br>검증</div>
         </div>
         <div class="s-cards" style="margin-top:auto;">
-          <div class="s-card"><h4>API 서빙</h4><p>FastAPI 기반 REST API</p></div>
-          <div class="s-card"><h4>화면 연동</h4><p>React 프론트엔드</p></div>
-          <div class="s-card"><h4>배포·운영</h4><p>Linux · Docker</p></div>
+          <div class="s-card"><h4>API 서빙</h4><p>FastAPI 기반 REST API로 개발</p></div>
+          <div class="s-card"><h4>화면 연동</h4><p>React 프론트엔드와 연동</p></div>
+          <div class="s-card"><h4>배포 · 운영</h4><p>Linux 서버에서 Docker로 운영</p></div>
         </div>
         <div class="pgn">04</div>
       </section>
 
       <section class="slide">
-        <div class="lab">Project 01 · Result</div>
+        <div class="lab">Project 01 · 성과</div>
         <h2>AI로 개발한 지수가 <span class="s-grad">상장 심사</span>를 진행 중입니다</h2>
         <div class="s-cards" style="margin-top:auto;">
-          <div class="s-card hi"><h4>상장 심사 진행 중</h4><p>통과하면 이후 지수도 같은 방식으로 개발</p></div>
-          <div class="s-card"><h4>fnindex.co.kr 개편</h4><p>메일 업무를 화면·기능으로 전환</p></div>
-          <div class="s-card"><h4>개발 속도·운영</h4><p>만드는 일보다 판단하는 일에 집중</p></div>
+          <div class="s-card hi"><h4>상장 심사 진행 중</h4><p>통과 시 이후 지수도 같은 방식으로 개발</p></div>
+          <div class="s-card"><h4>fnindex.co.kr 개편</h4><p>메일 업무를 화면과 기능으로 전환</p></div>
+          <div class="s-card"><h4>개발 속도 · 운영</h4><p>팀은 만드는 일보다 판단하는 일에 집중</p></div>
         </div>
         <div class="pgn">05</div>
       </section>
@@ -131,9 +130,9 @@
       <section class="slide">
         <div class="lab">Project 02 · 테마 대시보드</div>
         <h2>LLM으로 부상 중인 테마를 선제 발굴</h2>
-        <p>뉴스·공시·리포트에서 LLM으로 테마 키워드를 추출하고, 언급량과 관련 종목 수익률로 지표화하는 대시보드를 프론트엔드부터 서버, DB까지 단독으로 구축했습니다. 추출된 테마는 인덱스개발팀의 AI 테마 지수 개발에 활용됩니다.</p>
+        <p>뉴스, 공시, 리포트에서 LLM으로 테마 키워드를 추출하고, 언급량과 관련 종목 수익률로 지표화하는 대시보드를 프론트엔드부터 서버, DB까지 단독으로 구축했습니다. 추출된 테마는 인덱스개발팀의 AI 테마 지수 개발에도 활용됩니다.</p>
         <div class="s-flow" style="margin:auto 0;">
-          <div class="s-node">뉴스·공시<br>리포트</div><div class="s-arrow"></div>
+          <div class="s-node">뉴스 · 공시<br>리포트</div><div class="s-arrow"></div>
           <div class="s-node">LLM 키워드<br>추출</div><div class="s-arrow"></div>
           <div class="s-node">지표<br>계산</div><div class="s-arrow"></div>
           <div class="s-node hl">테마<br>대시보드</div>
@@ -144,21 +143,31 @@
       <section class="slide">
         <div class="lab">Project 03 · 기업개요 생성</div>
         <h2>사람이 쓰던 기업개요를 <span class="s-grad">완전 AI 전환</span></h2>
-        <p>네이버증권에 제공하는 기업개요를 LLM 생성과 Human-in-the-Loop 검증 체계로 전환했습니다.</p>
+        <p>네이버증권에 제공하는 기업개요를 LLM 생성과 Human-in-the-Loop 검증 체계로 전환했습니다. 현재는 전 과정이 AI 작성으로 운영됩니다.</p>
         <div class="s-cards c2" style="margin-top:auto;">
-          <div class="s-card hi"><h4>기간 1/4</h4><p>분기당 1개월 → 1주일 (검증 포함)</p></div>
-          <div class="s-card hi"><h4>비용 90% 절감</h4><p>분기당 500만원 → LLM 토큰 비용 50만원</p></div>
+          <div class="s-card hi"><h4>기간 1/4</h4><p>분기당 1개월에서 1주일로 (검증 포함)</p></div>
+          <div class="s-card hi"><h4>비용 90% 절감</h4><p>분기당 500만원에서 LLM 토큰 비용 50만원으로</p></div>
         </div>
         <div class="pgn">07</div>
       </section>
 
-      <section class="slide cover">
-        <div class="glow sg1"></div>
-        <div class="lab">What I Believe</div>
-        <h2 style="font-size:clamp(1.3rem,3.8vw,2.6rem);">진짜 문제를 풀고,<br><span class="s-grad">끝까지 책임지는</span> 사람이고 싶습니다</h2>
-        <p style="max-width:80%;">한 회사의 핵심 업무를 AI로 바꾸며 배운 것을, 더 많은 사람이 매일 쓰는 프로덕트에서 이어가고 싶습니다.</p>
-        <div class="who" style="margin-top:3%;">박재성 · bbba2418@naver.com</div>
+      <section class="slide">
+        <div class="lab">일하는 방식</div>
+        <h2>설계부터 운영까지, <span class="s-grad">AI와 함께</span></h2>
+        <div class="s-cards c2" style="margin-top:auto;">
+          <div class="s-card"><h4>Claude Code 중심의 개발</h4><p>반복 구현은 에이전트에 맡기고, 문제 정의와 구조 설계, 결과 검증에 집중합니다. 이 방식을 파트에 정착시켜 파트 전체의 개발 속도를 끌어올렸습니다.</p></div>
+          <div class="s-card"><h4>현업이 계속 쓰는 구조</h4><p>비개발 직군이 AI의 결과를 검토하고 수정하며, 그 수정이 다시 시스템에 반영되게 했을 때 비로소 AI가 업무의 일부가 됐습니다.</p></div>
+        </div>
         <div class="pgn">08</div>
+      </section>
+
+      <section class="slide cover">
+        <div class="sg sg1"></div>
+        <div class="lab">What I Believe</div>
+        <h2 style="font-size:clamp(1.3rem,4.2vw,2.6rem);">진짜 문제를 풀고,<br><span class="s-grad">끝까지 책임지는</span> 사람이고 싶습니다</h2>
+        <p style="max-width:78%;">한 회사의 핵심 업무를 AI로 바꾸며 배운 것을, 더 많은 사람이 매일 쓰는 프로덕트에서 이어가고 싶습니다.</p>
+        <div class="who" style="margin-top:3%;">박재성 · bbba2418@naver.com</div>
+        <div class="pgn">09</div>
       </section>
 
     </div>
