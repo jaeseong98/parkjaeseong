@@ -125,10 +125,31 @@ if (canvas) {
     camera.position.z = 10;
     const pmrem = new THREE.PMREMGenerator(renderer);
     scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.03).texture;
-    const mat = new THREE.MeshStandardMaterial({ color:0x0b0e16, metalness:1, roughness:0.15, flatShading:true });
-    const geo = new THREE.IcosahedronGeometry(3.15, 1);
+    scene.fog = new THREE.Fog(0x0a0c11, 10, 27);
+    const matD = new THREE.MeshStandardMaterial({ color:0x0b0e16, metalness:1, roughness:0.16, flatShading:true });
+    const matB = new THREE.MeshStandardMaterial({ color:0x0c1830, metalness:1, roughness:0.20, flatShading:true });
+    function stellate(base, spike){
+      const p = base.attributes.position, v = [];
+      const A=new THREE.Vector3(),B=new THREE.Vector3(),C=new THREE.Vector3(),N=new THREE.Vector3(),AB=new THREE.Vector3(),AC=new THREE.Vector3(),ctr=new THREE.Vector3(),apex=new THREE.Vector3();
+      for(let i=0;i<p.count;i+=3){
+        A.fromBufferAttribute(p,i); B.fromBufferAttribute(p,i+1); C.fromBufferAttribute(p,i+2);
+        AB.subVectors(B,A); AC.subVectors(C,A); N.crossVectors(AB,AC).normalize();
+        ctr.copy(A).add(B).add(C).multiplyScalar(1/3); apex.copy(ctr).addScaledVector(N,spike);
+        v.push(A.x,A.y,A.z,B.x,B.y,B.z,apex.x,apex.y,apex.z, B.x,B.y,B.z,C.x,C.y,C.z,apex.x,apex.y,apex.z, C.x,C.y,C.z,A.x,A.y,A.z,apex.x,apex.y,apex.z);
+      }
+      const g=new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(v,3)); g.computeVertexNormals(); return g;
+    }
+    const gem = stellate(new THREE.IcosahedronGeometry(1, 0), 0.42);
     const group = new THREE.Group(); scene.add(group);
-    const crystal = new THREE.Mesh(geo, mat); crystal.position.set(2.7, 0, 0); group.add(crystal);
+    const specs = [
+      {x:2.9,y:0,z:0,s:2.8,sp:0.12,b:false,main:true},
+      {x:-4.4,y:1.9,z:-4,s:0.95,sp:0.22,b:true},
+      {x:-3.1,y:-2.7,z:-3,s:0.72,sp:-0.18,b:false},
+      {x:5.1,y:-2.6,z:-5,s:1.15,sp:0.15,b:true},
+      {x:0.2,y:3.1,z:-6,s:0.6,sp:0.26,b:false},
+      {x:-1.6,y:-3.4,z:-7,s:0.5,sp:-0.2,b:true}
+    ];
+    const items = specs.map(o=>{ const m=new THREE.Mesh(gem, o.b?matB:matD); m.position.set(o.x,o.y,o.z); m.scale.setScalar(o.s); group.add(m); return {m, baseY:o.y, sp:o.sp, main:!!o.main}; });
     const l1=new THREE.DirectionalLight(0x8ab4ff, 2.4); l1.position.set(5,7,6); scene.add(l1);
     const l2=new THREE.DirectionalLight(0x2f6fe0, 1.4); l2.position.set(-7,-3,3); scene.add(l2);
     scene.add(new THREE.AmbientLight(0x404a5e, 0.45));
@@ -140,7 +161,7 @@ if (canvas) {
     new IntersectionObserver(es=>{ running=es[0].isIntersecting; }).observe(canvas);
     const clock=new THREE.Clock();
     function tick(){ requestAnimationFrame(tick); if(!running) return; const t=clock.getElapsedTime();
-      crystal.rotation.y = t*0.12; crystal.rotation.x = t*0.05; crystal.position.y = Math.sin(t*0.4)*0.3;
+      for (const it of items){ it.m.rotation.y = t*it.sp; it.m.rotation.x = t*it.sp*0.55; if(it.main) it.m.position.y = Math.sin(t*0.4)*0.28; }
       group.rotation.y += (mx*0.5 - group.rotation.y)*0.04;
       group.rotation.x += (-my*0.3 - group.rotation.x)*0.04;
       renderer.render(scene,camera);
