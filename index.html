@@ -5,15 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>박재성 | Portfolio</title>
 <meta name="description" content="지수 개발을 AI로 전환해온 AX 파트장 박재성의 포트폴리오">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/styles.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
-
 </head>
 <body>
-<nav class="nav">
-  <a class="brand" href="/">박재성<span>.</span></a>
-  <div class="menu"><a href="/" class="active">Home</a><a href="/projects" class="">Projects</a><a href="/resume" class="">Resume</a><a href="/deck" class="">Deck</a><a href="/links" class="">Links</a><a href="mailto:bbba2418@naver.com" class="mail">bbba2418@naver.com</a></div>
-</nav>
+<nav class="nav"><div class="menu"><a href="/" class="active">Home</a><a href="/projects" class="">Projects</a><a href="/resume" class="">Resume</a><a href="/deck" class="">Deck</a><a href="/links" class="">Links</a><a href="mailto:bbba2418@naver.com" class="mail">Email</a></div></nav>
 <main class="page">
 <header class="hero">
   <div class="glow g1"></div><div class="glow g2"></div>
@@ -27,34 +25,51 @@
 
 <section id="about">
   <div class="wrap">
-    <div class="sec-label reveal">About</div>
+    <div class="sec-label reveal">소개</div>
     <h2 class="reveal">지수 회사의 핵심 업무를<br><span class="grad">AI로 전환</span>해왔습니다</h2>
     <p class="lede reveal">에프앤가이드 AI팀에서 AX 파트장을 맡고 있습니다 (2024.02 입사). 회사의 핵심 비즈니스인 지수 개발을 AI 중심으로 바꿔왔고, 그 과정에서 파이프라인 설계부터 백엔드, 프론트엔드, 서버 운영까지 직접 만들었습니다. 기술을 도입하는 것보다, 현업이 계속 쓰는 구조를 만드는 것이 AI 전환이라고 생각합니다.</p>
+    <div class="highlights reveal">
+      <div class="stat"><div class="big grad">상장 심사</div><div class="lbl">AI로 개발한 지수가 심사 진행 중 — 통과 시 지수 개발의 표준이 됩니다</div></div>
+      <div class="stat"><div class="big grad">비용 90%↓</div><div class="lbl">기업개요 생성을 AI로 전환 — 분기 500만원에서 50만원으로</div></div>
+      <div class="stat"><div class="big grad">E2E</div><div class="lbl">데이터 수집부터 API 서빙·운영까지 파이프라인 전 구간을 직접 구축</div></div>
+    </div>
   </div>
 </section>
 <hr class="divider">
-<section id="projects-preview">
+<section id="work">
   <div class="wrap">
     <div class="sec-label reveal">Selected Work</div>
     <h2 class="reveal">프로젝트</h2>
-    <div class="index reveal" style="margin-top:30px;">
-      <a class="idx-row" href="/projects/fnaidx">
-        <div class="n">01</div>
-        <div class="t">AI 지수 개발 플랫폼 구축 (FnAIDX)<small>지수 개발 방법론의 AI 전환 · 상장 심사 진행 중</small></div>
-        <div class="go">자세히 →</div>
-      </a>
-      <a class="idx-row" href="/projects/theme">
-        <div class="n">02</div>
-        <div class="t">테마 대시보드 구축<small>LLM 기반 테마 선제 발굴 · 풀스택 단독 수행</small></div>
-        <div class="go">자세히 →</div>
-      </a>
-      <a class="idx-row" href="/projects/overview">
-        <div class="n">03</div>
-        <div class="t">AI 기반 기업개요 생성<small>비용 90% 절감 · 소요 기간 1개월에서 1주일로</small></div>
-        <div class="go">자세히 →</div>
-      </a>
+    <div class="pcards reveal" style="margin-top:30px;">
+      <a class="pcard" href="/projects/fnaidx">
+  <div class="thumb"><img src="/assets/img/home.jpg" alt="FnAIDX"></div>
+  <div class="body"><div class="no">01 · FnAIDX</div><h3>AI 지수 개발 플랫폼</h3><p>테마 발굴부터 검증까지 수작업이던 지수 개발을 하나의 AI 파이프라인으로. 상장 심사 진행 중.</p><div class="tags"><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">LLM</span><span class="chip">Docker</span></div></div>
+</a>
+      <a class="pcard" href="/projects/theme">
+  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">뉴스·공시</span><span class="a">→</span><span class="m">LLM 추출</span><span class="a">→</span><span class="m hl">테마 발굴</span></div></div>
+  <div class="body"><div class="no">02 · 테마 대시보드</div><h3>테마 대시보드 구축</h3><p>뉴스·공시·리포트에서 LLM으로 테마를 추출해 부상 중인 테마를 선제 발굴. 풀스택 단독 수행.</p><div class="tags"><span class="chip">LLM</span><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">DB</span></div></div>
+</a>
     </div>
-    <p class="reveal" style="margin-top:22px;"><a href="/projects">모든 프로젝트 보기 →</a></p>
+    <div class="pcards reveal" style="margin-top:22px; grid-template-columns:1fr;">
+      <a class="pcard" href="/projects/overview">
+  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">공시</span><span class="a">→</span><span class="m">LLM 생성</span><span class="a">→</span><span class="m hl">검증</span></div></div>
+  <div class="body"><div class="no">03 · 기업개요 생성</div><h3>AI 기반 기업개요 생성</h3><p>네이버증권 제공 기업개요를 사람에서 AI로 완전 전환. 비용 90% 절감, 기간 1/4로 단축.</p><div class="tags"><span class="chip">LLM</span><span class="chip">HITL</span><span class="chip">Python</span></div></div>
+</a>
+    </div>
+    <p class="reveal" style="margin-top:22px;"><a href="/projects">모든 프로젝트 자세히 보기 →</a></p>
+  </div>
+</section>
+<hr class="divider">
+<section id="skills-preview">
+  <div class="wrap">
+    <div class="sec-label reveal">Skills</div>
+    <h2 class="reveal">풀스택으로, AI Native하게</h2>
+    <div class="panel reveal" style="margin-top:24px;">
+      <div class="stack-row"><div class="k">Backend</div><div class="v">Python, FastAPI, MSSQL, Docker, Linux</div></div>
+      <div class="stack-row"><div class="k">Frontend</div><div class="v">React</div></div>
+      <div class="stack-row"><div class="k">AI · Data</div><div class="v">LLM 프롬프트 엔지니어링, RAG · Vector Search, Human-in-the-Loop 설계</div></div>
+      <div class="stack-row"><div class="k">Workflow</div><div class="v">Claude Code (Agentic 개발), Airflow, Git</div></div>
+    </div>
   </div>
 </section>
 <hr class="divider">
@@ -91,6 +106,5 @@
   setTimeout(function(){ items.forEach(function(el){ el.classList.add('in'); }); }, 3000);
 })();
 </script>
-
 </body>
 </html>

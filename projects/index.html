@@ -5,15 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projects | 박재성</title>
 <meta name="description" content="박재성의 프로젝트 — FnAIDX, 테마 대시보드, AI 기업개요 생성">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/styles.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
-
 </head>
 <body>
-<nav class="nav">
-  <a class="brand" href="/">박재성<span>.</span></a>
-  <div class="menu"><a href="/" class="">Home</a><a href="/projects" class="active">Projects</a><a href="/resume" class="">Resume</a><a href="/deck" class="">Deck</a><a href="/links" class="">Links</a><a href="mailto:bbba2418@naver.com" class="mail">bbba2418@naver.com</a></div>
-</nav>
+<nav class="nav"><div class="menu"><a href="/" class="">Home</a><a href="/projects" class="active">Projects</a><a href="/resume" class="">Resume</a><a href="/deck" class="">Deck</a><a href="/links" class="">Links</a><a href="mailto:bbba2418@naver.com" class="mail">Email</a></div></nav>
 <main class="page">
 <section>
   <div class="wrap">
@@ -22,17 +20,19 @@
     <p class="lede reveal">지수 개발을 AI로 전환하는 과정에서 설계하고 운영한 프로젝트입니다. 각 카드를 눌러 상세 내용을 볼 수 있습니다.</p>
     <div class="pcards reveal" style="margin-top:36px;">
       <a class="pcard" href="/projects/fnaidx">
-        <div class="thumb"><img src="/assets/img/home.jpg" alt="FnAIDX"></div>
-        <div class="body"><div class="no">PROJECT 01</div><h3>AI 지수 개발 플랫폼 (FnAIDX)</h3><p>테마 발굴부터 검증까지 수작업이던 지수 개발을 하나의 AI 파이프라인으로. 상장 심사 진행 중.</p><div class="tags"><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">LLM</span><span class="chip">Docker</span></div></div>
-      </a>
+  <div class="thumb"><img src="/assets/img/home.jpg" alt="FnAIDX"></div>
+  <div class="body"><div class="no">01 · FnAIDX</div><h3>AI 지수 개발 플랫폼</h3><p>테마 발굴부터 검증까지 수작업이던 지수 개발을 하나의 AI 파이프라인으로. 상장 심사 진행 중.</p><div class="tags"><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">LLM</span><span class="chip">Docker</span></div></div>
+</a>
       <a class="pcard" href="/projects/theme">
-        <div class="thumb"><img src="/assets/img/sim.jpg" alt="테마 대시보드"></div>
-        <div class="body"><div class="no">PROJECT 02</div><h3>테마 대시보드 구축</h3><p>뉴스·공시·리포트에서 LLM으로 테마를 추출해 부상 중인 테마를 선제 발굴. 풀스택 단독 수행.</p><div class="tags"><span class="chip">LLM</span><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">DB</span></div></div>
-      </a>
+  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">뉴스·공시</span><span class="a">→</span><span class="m">LLM 추출</span><span class="a">→</span><span class="m hl">테마 발굴</span></div></div>
+  <div class="body"><div class="no">02 · 테마 대시보드</div><h3>테마 대시보드 구축</h3><p>뉴스·공시·리포트에서 LLM으로 테마를 추출해 부상 중인 테마를 선제 발굴. 풀스택 단독 수행.</p><div class="tags"><span class="chip">LLM</span><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">DB</span></div></div>
+</a>
+    </div>
+    <div class="pcards reveal" style="margin-top:22px; grid-template-columns:1fr;">
       <a class="pcard" href="/projects/overview">
-        <div class="thumb"><img src="/assets/img/src.jpg" alt="기업개요 생성"></div>
-        <div class="body"><div class="no">PROJECT 03</div><h3>AI 기반 기업개요 생성</h3><p>네이버증권 제공 기업개요를 사람에서 AI로 완전 전환. 비용 90% 절감, 기간 1/4로 단축.</p><div class="tags"><span class="chip">LLM</span><span class="chip">HITL</span><span class="chip">Python</span></div></div>
-      </a>
+  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">공시</span><span class="a">→</span><span class="m">LLM 생성</span><span class="a">→</span><span class="m hl">검증</span></div></div>
+  <div class="body"><div class="no">03 · 기업개요 생성</div><h3>AI 기반 기업개요 생성</h3><p>네이버증권 제공 기업개요를 사람에서 AI로 완전 전환. 비용 90% 절감, 기간 1/4로 단축.</p><div class="tags"><span class="chip">LLM</span><span class="chip">HITL</span><span class="chip">Python</span></div></div>
+</a>
     </div>
   </div>
 </section>
@@ -55,6 +55,5 @@
   setTimeout(function(){ items.forEach(function(el){ el.classList.add('in'); }); }, 3000);
 })();
 </script>
-
 </body>
 </html>
