@@ -88,11 +88,18 @@
   var btn=document.getElementById('snd'); if(!btn) return;
   var audio=new Audio('/assets/audio/lofi.mp3'); audio.loop=true; audio.preload='none'; audio.volume=0;
   var playing=false, TGT=0.45, ft=null;
+  function save(){ try{ localStorage.setItem('snd', playing?'1':'0'); if(playing && audio.currentTime>0) localStorage.setItem('snd_t', String(audio.currentTime)); }catch(e){} }
   function fade(to){ clearInterval(ft); ft=setInterval(function(){ var d=to-audio.volume; if(Math.abs(d)<0.02){ audio.volume=to; clearInterval(ft); if(to===0){ try{audio.pause();}catch(e){} } return; } audio.volume=Math.max(0,Math.min(1,audio.volume+d*0.08)); }, 40); }
-  function set(on){ playing=on; btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on?'true':'false'); try{ localStorage.setItem('snd', on?'1':'0'); }catch(e){}
-    if(on){ var p=audio.play(); if(p&&p.then){ p.then(function(){ fade(TGT); }).catch(function(){}); } else { fade(TGT); } } else { fade(0); } }
+  function set(on){ playing=on; btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on?'true':'false');
+    if(on){ var st=parseFloat(localStorage.getItem('snd_t')||'0'); var seek=function(){ if(st>0&&isFinite(st)){ try{ audio.currentTime=st; }catch(e){} } };
+      var p=audio.play(); if(p&&p.then){ p.then(function(){ seek(); fade(TGT); }).catch(function(){}); } else { seek(); fade(TGT); } }
+    else { fade(0); } save(); }
   btn.addEventListener('click', function(){ set(!playing); });
-  try{ if(localStorage.getItem('snd')==='1'){ var r=function(){ set(true); window.removeEventListener('pointerdown',r); }; window.addEventListener('pointerdown', r, {once:true}); } }catch(e){}
+  setInterval(function(){ if(playing) save(); }, 3000);
+  window.addEventListener('pagehide', save);
+  try{ if(localStorage.getItem('snd')==='1'){ var evs=['pointerdown','keydown','wheel','touchstart'], done=false;
+    var r=function(){ if(done) return; done=true; evs.forEach(function(ev){ window.removeEventListener(ev,r); }); set(true); };
+    evs.forEach(function(ev){ window.addEventListener(ev, r, {passive:true}); }); } }catch(e){}
 })();
 </script>
 
