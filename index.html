@@ -8,14 +8,14 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/styles.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230d1017'/><g stroke='%233182f6' stroke-width='3'><line x1='28' y1='34' x2='62' y2='26'/><line x1='62' y1='26' x2='74' y2='60'/><line x1='74' y1='60' x2='38' y2='72'/><line x1='38' y1='72' x2='28' y2='34'/><line x1='28' y1='34' x2='74' y2='60'/></g><g fill='%238fbaff'><circle cx='28' cy='34' r='7'/><circle cx='62' cy='26' r='6'/><circle cx='74' cy='60' r='7'/><circle cx='38' cy='72' r='6'/></g></svg>">
 </head>
 <body>
+<canvas id="bg-net" class="bg-net"></canvas>
 <nav class="nav"><div class="menu"><a href="/" class="active">Home</a><a href="/projects" class="">Projects</a><a href="/resume" class="">Resume</a><a href="/deck" class="">Deck</a><a href="/links" class="">Links</a><a href="mailto:bbba2418@naver.com" class="mail">Email</a></div></nav>
 <main class="page">
 <header class="hero">
   <div class="glow g1"></div><div class="glow g2"></div>
-  <canvas id="orb-canvas" class="hero-canvas"></canvas>
   <div class="scrim"></div>
   <div class="wrap">
     <div class="eyebrow">AI Native Product Builder</div>
@@ -88,6 +88,7 @@
   </div>
 </section>
 </main>
+<button id="snd" class="snd" aria-label="배경음" aria-pressed="false"><span class="eq"><i></i><i></i><i></i><i></i></span></button>
 <footer>
   <div class="wrap">
     <div class="who">박재성 · AI Native Product Builder<small>bbba2418@naver.com</small></div>
@@ -109,42 +110,50 @@
 
 <script>
 (function(){
-  var canvas = document.getElementById('orb-canvas');
-  if(!canvas) return;
-  var ctx = canvas.getContext('2d');
-  if(!ctx) return;
+  var canvas = document.getElementById('bg-net'); if(!canvas) return;
+  var ctx = canvas.getContext('2d'); if(!ctx) return;
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var DPR = Math.min(window.devicePixelRatio||1, 2);
   var W=0,H=0, nodes=[], mouse={x:-9999,y:-9999}, DIST=140;
-  function build(){
-    W=canvas.clientWidth; H=canvas.clientHeight;
-    canvas.width=W*DPR; canvas.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
-    var count=Math.max(28, Math.min(96, Math.round(W*H/15000)));
-    nodes=[];
-    for(var i=0;i<count;i++) nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-0.5)*0.32,vy:(Math.random()-0.5)*0.32});
-  }
-  function frame(){
-    ctx.clearRect(0,0,W,H);
-    var i,j,n,a,b,dx,dy,d,o;
-    for(i=0;i<nodes.length;i++){ n=nodes[i]; n.x+=n.vx; n.y+=n.vy;
-      if(n.x<-30)n.x=W+30; else if(n.x>W+30)n.x=-30;
-      if(n.y<-30)n.y=H+30; else if(n.y>H+30)n.y=-30; }
+  function build(){ W=canvas.clientWidth; H=canvas.clientHeight; canvas.width=W*DPR; canvas.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+    var count=Math.max(28, Math.min(96, Math.round(W*H/15000))); nodes=[];
+    for(var i=0;i<count;i++) nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-0.5)*0.32,vy:(Math.random()-0.5)*0.32}); }
+  function frame(){ ctx.clearRect(0,0,W,H); var i,j,n,a,b,dx,dy,d,o;
+    for(i=0;i<nodes.length;i++){ n=nodes[i]; n.x+=n.vx; n.y+=n.vy; if(n.x<-30)n.x=W+30; else if(n.x>W+30)n.x=-30; if(n.y<-30)n.y=H+30; else if(n.y>H+30)n.y=-30; }
     ctx.lineWidth=1;
     for(i=0;i<nodes.length;i++){ for(j=i+1;j<nodes.length;j++){ a=nodes[i]; b=nodes[j]; dx=a.x-b.x; dy=a.y-b.y; d=dx*dx+dy*dy;
       if(d<DIST*DIST){ o=1-Math.sqrt(d)/DIST; ctx.strokeStyle='rgba(74,140,246,'+(o*0.32)+')'; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); } } }
     for(i=0;i<nodes.length;i++){ n=nodes[i]; dx=n.x-mouse.x; dy=n.y-mouse.y; d=Math.sqrt(dx*dx+dy*dy);
       if(d<200){ o=1-d/200; ctx.strokeStyle='rgba(120,175,255,'+(o*0.55)+')'; ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(mouse.x,mouse.y); ctx.stroke(); } }
-    for(i=0;i<nodes.length;i++){ n=nodes[i]; ctx.beginPath(); ctx.arc(n.x,n.y,1.8,0,6.2832); ctx.fillStyle='rgba(150,190,255,0.9)'; ctx.fill(); }
-  }
-  var running=true;
-  function loop(){ requestAnimationFrame(loop); if(running) frame(); }
+    for(i=0;i<nodes.length;i++){ n=nodes[i]; ctx.beginPath(); ctx.arc(n.x,n.y,1.8,0,6.2832); ctx.fillStyle='rgba(150,190,255,0.9)'; ctx.fill(); } }
+  var running=true; function loop(){ requestAnimationFrame(loop); if(running) frame(); }
   window.addEventListener('resize', build, {passive:true});
-  window.addEventListener('pointermove', function(e){ var r=canvas.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top; }, {passive:true});
+  window.addEventListener('pointermove', function(e){ mouse.x=e.clientX; mouse.y=e.clientY; }, {passive:true});
   window.addEventListener('pointerleave', function(){ mouse.x=-9999; mouse.y=-9999; });
-  try{ new IntersectionObserver(function(es){ running=es[0].isIntersecting; }).observe(canvas); }catch(e){}
-  build();
-  if(reduce) frame(); else loop();
+  document.addEventListener('visibilitychange', function(){ running=!document.hidden; });
+  build(); if(reduce) frame(); else loop();
 })();
 </script>
+
+<script>
+(function(){
+  var btn=document.getElementById('snd'); if(!btn) return;
+  var actx, master, started=false, playing=false;
+  function init(){ var AC=window.AudioContext||window.webkitAudioContext; if(!AC) return false;
+    actx=new AC(); master=actx.createGain(); master.gain.value=0; master.connect(actx.destination);
+    var filt=actx.createBiquadFilter(); filt.type='lowpass'; filt.frequency.value=680; filt.Q.value=5; filt.connect(master);
+    [55,82.41,110,164.81,220].forEach(function(f,i){ var o=actx.createOscillator(); o.type=(i%2)?'sine':'triangle'; o.frequency.value=f;
+      var g=actx.createGain(); g.gain.value=0.13/(i+1); o.connect(g); g.connect(filt); o.start();
+      var dt=actx.createOscillator(); dt.frequency.value=0.05+i*0.03; var dg=actx.createGain(); dg.gain.value=1.6; dt.connect(dg); dg.connect(o.detune); dt.start(); });
+    var lfo=actx.createOscillator(); lfo.frequency.value=0.06; var lg=actx.createGain(); lg.gain.value=280; lfo.connect(lg); lg.connect(filt.frequency); lfo.start();
+    started=true; return true; }
+  function set(on){ if(on && !started){ if(!init()) return; } if(actx && actx.state==='suspended') actx.resume();
+    playing=on; var t=actx?actx.currentTime:0; if(master){ master.gain.cancelScheduledValues(t); master.gain.linearRampToValueAtTime(on?0.085:0, t+(on?1.4:0.7)); }
+    btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on?'true':'false'); try{ localStorage.setItem('snd', on?'1':'0'); }catch(e){} }
+  btn.addEventListener('click', function(){ set(!playing); });
+  try{ if(localStorage.getItem('snd')==='1'){ var r=function(){ set(true); window.removeEventListener('pointerdown',r); }; window.addEventListener('pointerdown', r, {once:true}); } }catch(e){}
+})();
+</script>
+
 </body>
 </html>
