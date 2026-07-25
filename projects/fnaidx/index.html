@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 지수 개발 플랫폼 (FnAIDX) · 박재성</title>
+<meta name="description" content="지수 개발 방법론의 AI 전환, 상장 심사 진행 중">
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="/">박재성<span>.</span></a>
+  <div class="menu"><a href="/" class="">Home</a><a href="/projects" class="active">Projects</a><a href="/resume" class="">Resume</a><a href="/deck" class="">Deck</a><a href="/links" class="">Links</a><a href="mailto:bbba2418@naver.com" class="mail">bbba2418@naver.com</a></div>
+</nav>
+<main class="page">
+<section style="padding-bottom:40px;">
+  <div class="wrap">
+    <p class="reveal"><a href="/projects" style="font-size:14px;color:var(--text-3)">← Projects</a></p>
+    <div class="sec-label reveal" style="margin-top:14px;">Project 01</div>
+    <h2 class="reveal">AI 지수 개발 플랫폼 구축 <span class="grad">(FnAIDX)</span></h2>
+    <p class="meta reveal">2026.01 – 2026.07 · <a href="https://aidx.fnguide.com" target="_blank" rel="noopener">aidx.fnguide.com</a> · 반도체·바이오·방산 등 테마 지수 개발의 AI 전환</p>
+    <div class="hero-shot reveal">
+      <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/home.jpg" alt="FnAIDX 지수 대시보드"></div>
+    </div>
+  </div>
+</section>
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="grid-split">
+      <div class="reveal">
+        <div class="sec-label">Problem</div>
+        <p class="muted">테마 지수를 만들려면 뉴스와 공시를 뒤져 테마를 잡고, 종목을 고르고, 검증하는 과정을 반복해야 합니다. 이 전 과정이 담당자 개인의 수작업에 묶여 있어 속도와 일관성 모두 한계가 있었고, 분석 결과는 개인 PC의 문서로만 남아 조직의 자산이 되지 못했습니다.</p>
+      </div>
+      <div class="panel reveal">
+        <h3>문제의 재정의</h3>
+        <p class="muted" style="font-size:15px;">각 단계를 따로 자동화해도 결과가 축적되지 않으면 같은 일이 반복됩니다. 사람이 판단할 일과 기계가 처리할 일을 분리해, 흩어져 있던 단계를 하나의 파이프라인으로 묶고 결과를 축적하는 구조로 다시 설계했습니다.</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:52px;">
+      <div class="sec-label">Solution · Pipeline</div>
+      <p class="muted" style="max-width:44em;">뉴스·공시·리포트를 수집해 테마를 정의하고, LLM으로 기업 개요를 생성한 뒤, 임베딩 유사도로 후보 종목을 넓게 찾고, 마지막으로 LLM이 근거와 함께 검증합니다. 후보를 넓게 찾고 검증으로 좁히는 구조입니다.</p>
+      <div class="flow-scroll">
+        <div class="flow">
+          <div class="node">데이터<br>수집</div><div class="arrow"></div>
+          <div class="node">테마<br>정의</div><div class="arrow"></div>
+          <div class="node">기업 개요<br>생성</div><div class="arrow"></div>
+          <div class="node">유사도<br>계산</div><div class="arrow"></div>
+          <div class="node hl">LLM<br>검증</div>
+        </div>
+      </div>
+      <div class="cards c3" style="margin-top:26px;">
+        <div class="card"><h3 class="plain">API 서빙</h3><p>파이프라인 전 기능을 FastAPI 기반 REST API로 개발</p></div>
+        <div class="card"><h3 class="plain">화면 연동</h3><p>React 프론트엔드에서 실험 설정부터 결과 확인까지</p></div>
+        <div class="card"><h3 class="plain">배포·운영</h3><p>Linux 서버에서 Docker 기반으로 직접 배포하고 운영</p></div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:52px;">
+      <div class="sec-label">Screens</div>
+      <div class="shots">
+        <div>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/sim.jpg" alt="시뮬레이션 실험 설정"></div>
+          <p class="cap">시뮬레이션 실험 설정. 기간과 개편 주기를 정하고 테마 키워드를 정의하면 지수 생성이 시작됩니다.</p>
+        </div>
+        <div>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/src.jpg" alt="LLM 기업 개요와 출처"></div>
+          <p class="cap">LLM이 생성한 기업 개요와 출처 236건. 모든 생성 결과는 뉴스·공시 원문으로 근거를 추적할 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:52px;">
+      <div class="sec-label">Result</div>
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem);">AI로 개발한 지수가 <span class="grad">상장 심사</span>를 진행하고 있습니다</h2>
+      <div class="grid-split" style="margin-top:24px;">
+        <div class="cards" style="gap:14px;">
+          <div class="card hi"><h3>상장 심사 진행 중</h3><p>AI 전환 방법론으로 개발한 지수가 상장 심사를 진행하고 있습니다. 통과하면 이후의 지수들도 같은 방식으로 개발됩니다.</p></div>
+          <div class="card"><h3 class="plain">fnindex.co.kr 개편</h3><p>기존 지수 정보 시스템을 플랫폼으로 개편하고, 인덱스개발팀과 고객이 메일로 주고받던 업무를 화면과 기능으로 옮겼습니다.</p></div>
+          <div class="card"><h3 class="plain">개발 속도와 운영</h3><p>지수 개발 속도가 눈에 띄게 빨라졌고, 유지·관리를 플랫폼이 담당하면서 팀은 만드는 일보다 판단하는 일에 집중하게 됐습니다.</p></div>
+        </div>
+        <div>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/perf.jpg" alt="지수 성과분석"></div>
+          <p class="cap">생성된 지수의 성과분석 화면. 기간별 수익률과 리스크 지표를 벤치마크와 비교합니다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:48px; display:flex; gap:12px; flex-wrap:wrap;">
+      <a class="btn ghost" href="/projects/theme">다음: 테마 대시보드 →</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="who">박재성 · AI Native Product Builder<small>bbba2418@naver.com</small></div>
+    <div class="fnav">
+      <a href="/">Home</a><a href="/projects">Projects</a><a href="/resume">Resume</a><a href="/deck">Deck</a><a href="/links">Links</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = [].slice.call(document.querySelectorAll('.reveal'));
+  if (reduce || !('IntersectionObserver' in window)) { items.forEach(function(el){el.classList.add('in');}); return; }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+  items.forEach(function(el){ io.observe(el); });
+  setTimeout(function(){ items.forEach(function(el){ el.classList.add('in'); }); }, 3000);
+})();
+</script>
+
+</body>
+</html>

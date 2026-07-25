@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 기반 기업개요 생성 · 박재성</title>
+<meta name="description" content="기업개요 작성의 완전 AI 전환, 비용 90% 절감">
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="/">박재성<span>.</span></a>
+  <div class="menu"><a href="/" class="">Home</a><a href="/projects" class="active">Projects</a><a href="/resume" class="">Resume</a><a href="/deck" class="">Deck</a><a href="/links" class="">Links</a><a href="mailto:bbba2418@naver.com" class="mail">bbba2418@naver.com</a></div>
+</nav>
+<main class="page">
+<section>
+  <div class="wrap">
+    <p class="reveal"><a href="/projects" style="font-size:14px;color:var(--text-3)">← Projects</a></p>
+    <div class="sec-label reveal" style="margin-top:14px;">Project 03</div>
+    <h2 class="reveal">AI 기반 기업개요 생성</h2>
+    <p class="meta reveal">2025.06 – 2025.12 · 네이버증권에 제공하는 기업개요 작성의 완전 AI 전환</p>
+    <div class="hero-shot reveal">
+      <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/src.jpg" alt="기업개요 생성"></div>
+    </div>
+    <p class="lede reveal" style="margin-top:40px;">공시 텍스트 기반 기업개요 3~4문장을 사람이 작성하고 검수해 제공하고 있었습니다. 분기당 인건비 500만원, 완성까지 약 1개월. 이 과정을 LLM 생성과 Human-in-the-Loop 검증 체계로 전환해 현재는 전 과정이 AI 작성으로 운영됩니다.</p>
+    <div class="flow-scroll reveal" style="margin-top:40px;">
+      <div class="flow">
+        <div class="node">공시<br>텍스트</div><div class="arrow"></div>
+        <div class="node">LLM 분석<br>· 생성</div><div class="arrow"></div>
+        <div class="node hl">Human-in-<br>the-Loop</div><div class="arrow"></div>
+        <div class="node">네이버증권<br>제공</div>
+      </div>
+    </div>
+    <div class="cards c3 reveal" style="margin-top:26px;">
+      <div class="card hi"><h3>기간 1/4</h3><p>분기당 소요 기간 1개월 → 1주일 (검증 포함)</p></div>
+      <div class="card hi"><h3>비용 90% 절감</h3><p>분기당 인건비 500만원 → LLM 토큰 비용 50만원</p></div>
+      <div class="card"><h3 class="plain">완전 전환</h3><p>사람이 작성하던 전 과정이 AI 작성 체계로 운영 중</p></div>
+    </div>
+    <div class="reveal" style="margin-top:48px; display:flex; gap:12px; flex-wrap:wrap;">
+      <a class="btn ghost" href="/projects/fnaidx">처음으로: FnAIDX →</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="who">박재성 · AI Native Product Builder<small>bbba2418@naver.com</small></div>
+    <div class="fnav">
+      <a href="/">Home</a><a href="/projects">Projects</a><a href="/resume">Resume</a><a href="/deck">Deck</a><a href="/links">Links</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = [].slice.call(document.querySelectorAll('.reveal'));
+  if (reduce || !('IntersectionObserver' in window)) { items.forEach(function(el){el.classList.add('in');}); return; }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+  items.forEach(function(el){ io.observe(el); });
+  setTimeout(function(){ items.forEach(function(el){ el.classList.add('in'); }); }, 3000);
+})();
+</script>
+
+</body>
+</html>
