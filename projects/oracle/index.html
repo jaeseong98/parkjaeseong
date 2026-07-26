@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projects | 박재성</title>
-<meta name="description" content="박재성의 프로젝트 · FnAIDX, 테마 대시보드, AI 기업개요 생성">
+<title>AI 키워드 추론 게임 | 박재성</title>
+<meta name="description" content="Claude에게 질문해 숨겨진 키워드를 맞히는 게임 (진행 중)">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/styles.css">
@@ -15,46 +15,32 @@
 <nav class="nav"><div class="menu"><a href="/" class="">Home</a><a href="/projects" class="active">Projects</a><a href="/resume" class="">Resume</a><a href="/deck" class="">Deck</a><a href="/links" class="">Links</a></div></nav>
 <main class="page">
 <section>
-  <div class="wrap wide">
-    <div class="sec-label reveal">Work</div>
-    <h2 class="reveal">에프앤가이드에서 만든 것들</h2>
-    <p class="lede reveal">지수 개발을 AI로 전환하는 과정에서 설계하고 운영한 프로젝트입니다. 각 카드를 눌러 상세 내용을 볼 수 있습니다.</p>
-    <div class="pcards three reveal" style="margin-top:36px;">
-      <a class="pcard" href="/projects/fnaidx">
-  <div class="thumb"><img src="/assets/img/home.jpg" alt="FnAIDX"></div>
-  <div class="body"><div class="no">01 · FnAIDX</div><h3>AI 지수 개발 플랫폼</h3><p>테마 발굴부터 검증까지 수작업이던 지수 개발을 하나의 AI 파이프라인으로. 상장 심사 진행 중.</p><div class="tags"><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">LLM</span><span class="chip">Docker</span></div></div>
-</a>
-      <a class="pcard" href="/projects/theme">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">뉴스·공시</span><span class="a">→</span><span class="m">LLM 추출</span><span class="a">→</span><span class="m hl">테마 발굴</span></div></div>
-  <div class="body"><div class="no">02 · 테마 대시보드</div><h3>테마 대시보드 구축</h3><p>뉴스·공시·리포트에서 LLM으로 테마를 추출해 부상 중인 테마를 선제 발굴. 풀스택 단독 수행.</p><div class="tags"><span class="chip">LLM</span><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">DB</span></div></div>
-</a>
-      <a class="pcard" href="/projects/overview">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">공시</span><span class="a">→</span><span class="m">LLM 생성</span><span class="a">→</span><span class="m hl">검증</span></div></div>
-  <div class="body"><div class="no">03 · 기업개요 생성</div><h3>AI 기반 기업개요 생성</h3><p>네이버증권 제공 기업개요를 사람에서 AI로 완전 전환. 비용 90% 절감, 기간 1/4로 단축.</p><div class="tags"><span class="chip">LLM</span><span class="chip">HITL</span><span class="chip">Python</span></div></div>
-</a>
+  <div class="wrap">
+    <p class="reveal"><a href="/projects" style="font-size:14px;color:var(--text-3)">← Projects</a></p>
+    <div class="sec-label reveal" style="margin-top:14px;">Side Project</div>
+    <h2 class="reveal">AI 키워드 추론 게임 <span class="badge">진행 중</span></h2>
+    <p class="meta reveal">개인 프로젝트 · NHN 해커톤 출품작 · Cloudflare 풀스택</p>
+    <p class="lede reveal">숨겨진 키워드를 플레이어가 Claude에게 자연어로 질문하면, AI는 예/아니오로만 답합니다. 그 힌트만으로 정답을 추론하는 게임입니다. 몇 번의 턴 만에 맞히는지, 제한 시간 안에 몇 개를 맞히는지, 여럿이 붙으면 누가 먼저 맞히는지로 점수가 갈립니다.</p>
+    <div class="flow-scroll reveal" style="margin-top:40px;">
+      <div class="flow">
+        <div class="node">숨겨진<br>키워드</div><div class="arrow"></div>
+        <div class="node">자연어<br>질문</div><div class="arrow"></div>
+        <div class="node">AI 예/아니오<br>응답</div><div class="arrow"></div>
+        <div class="node hl">정답<br>추론</div>
+      </div>
     </div>
-  </div>
-</section>
-<hr class="divider">
-<section>
-  <div class="wrap wide">
-    <div class="sec-label reveal">Side Projects</div>
-    <h2 class="reveal">개인적으로 만들고 있는 것들</h2>
-    <p class="lede reveal">회사 밖에서, 필요해서 직접 만들고 다듬는 중인 프로젝트입니다. 데스크톱 앱부터 게임, 워크플로우 자동화까지.</p>
-    <div class="pcards three reveal" style="margin-top:36px;">
-      <a class="pcard" href="/projects/office-oasis">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">청소</span><span class="m">런처</span><span class="m">노트</span><span class="m hl">클립보드</span></div></div>
-  <div class="body"><div class="no">데스크톱 앱</div><h3>Office Oasis · 데스크톱 어시스턴트</h3><p>디스크 청소·도구 런처·노트·클립보드를 트레이 아이콘 하나로. 모든 처리는 본인 PC에서, 외부 전송 없이.</p><div class="tags"><span class="chip">Electron</span><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Tailwind</span></div></div>
-</a>
-      <a class="pcard" href="/projects/oracle">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">질문</span><span class="a">→</span><span class="m">AI 예/아니오</span><span class="a">→</span><span class="m hl">정답</span></div></div>
-  <div class="body"><div class="no">게임 · AI · 진행 중</div><h3>AI 키워드 추론 게임</h3><p>숨겨진 키워드를 Claude에게 자연어로 질문해 예/아니오 힌트로 맞히는 게임. NHN 해커톤 출품작.</p><div class="tags"><span class="chip">React</span><span class="chip">Cloudflare</span><span class="chip">Claude SDK</span><span class="chip">Hono</span></div></div>
-</a>
-      <a class="pcard" href="/projects/3d-rms">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">요청</span><span class="a">→</span><span class="m">체크</span><span class="a">→</span><span class="m hl">상태·알림</span></div></div>
-  <div class="body"><div class="no">Power Platform · 진행 중</div><h3>3D RMS</h3><p>3D 어패럴 디자인 요청을 접수·체크·모니터링하는 요청관리 시스템. PLM·CLO-SET·SharePoint 연동.</p><div class="tags"><span class="chip">Power Apps</span><span class="chip">Power Automate</span><span class="chip">Power BI</span><span class="chip">SharePoint</span></div></div>
-</a>
+    <div class="cards c3 reveal" style="margin-top:32px;">
+      <div class="card"><h3 class="plain">자연어 추론</h3><p>플레이어의 질문을 Claude가 이해해 예/아니오로 응답</p></div>
+      <div class="card"><h3 class="plain">3분할 UI</h3><p>좌측 현황 · 중앙 게임 · 우측 AI 챗봇</p></div>
+      <div class="card"><h3 class="plain">3가지 스코어</h3><p>소요 턴 수 · 제한 시간 내 정답 수 · 멀티플레이 선착순</p></div>
     </div>
+    <div class="reveal" style="margin-top:44px;">
+      <div class="sec-label">Stack</div>
+      <div class="tags" style="margin-top:6px; display:flex; gap:6px; flex-wrap:wrap;">
+        <span class="chip">React 19</span><span class="chip">Hono</span><span class="chip">Cloudflare Workers · D1</span><span class="chip">Zustand</span><span class="chip">Claude SDK</span>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:48px;"><a class="btn ghost" href="/projects/3d-rms">다음: 3D RMS →</a></div>
   </div>
 </section>
 </main>

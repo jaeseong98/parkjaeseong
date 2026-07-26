@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projects | 박재성</title>
-<meta name="description" content="박재성의 프로젝트 · FnAIDX, 테마 대시보드, AI 기업개요 생성">
+<title>3D RMS | 박재성</title>
+<meta name="description" content="Power Platform 기반 3D 어패럴 디자인 요청관리 시스템 (진행 중)">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/styles.css">
@@ -15,46 +15,32 @@
 <nav class="nav"><div class="menu"><a href="/" class="">Home</a><a href="/projects" class="active">Projects</a><a href="/resume" class="">Resume</a><a href="/deck" class="">Deck</a><a href="/links" class="">Links</a></div></nav>
 <main class="page">
 <section>
-  <div class="wrap wide">
-    <div class="sec-label reveal">Work</div>
-    <h2 class="reveal">에프앤가이드에서 만든 것들</h2>
-    <p class="lede reveal">지수 개발을 AI로 전환하는 과정에서 설계하고 운영한 프로젝트입니다. 각 카드를 눌러 상세 내용을 볼 수 있습니다.</p>
-    <div class="pcards three reveal" style="margin-top:36px;">
-      <a class="pcard" href="/projects/fnaidx">
-  <div class="thumb"><img src="/assets/img/home.jpg" alt="FnAIDX"></div>
-  <div class="body"><div class="no">01 · FnAIDX</div><h3>AI 지수 개발 플랫폼</h3><p>테마 발굴부터 검증까지 수작업이던 지수 개발을 하나의 AI 파이프라인으로. 상장 심사 진행 중.</p><div class="tags"><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">LLM</span><span class="chip">Docker</span></div></div>
-</a>
-      <a class="pcard" href="/projects/theme">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">뉴스·공시</span><span class="a">→</span><span class="m">LLM 추출</span><span class="a">→</span><span class="m hl">테마 발굴</span></div></div>
-  <div class="body"><div class="no">02 · 테마 대시보드</div><h3>테마 대시보드 구축</h3><p>뉴스·공시·리포트에서 LLM으로 테마를 추출해 부상 중인 테마를 선제 발굴. 풀스택 단독 수행.</p><div class="tags"><span class="chip">LLM</span><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">DB</span></div></div>
-</a>
-      <a class="pcard" href="/projects/overview">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">공시</span><span class="a">→</span><span class="m">LLM 생성</span><span class="a">→</span><span class="m hl">검증</span></div></div>
-  <div class="body"><div class="no">03 · 기업개요 생성</div><h3>AI 기반 기업개요 생성</h3><p>네이버증권 제공 기업개요를 사람에서 AI로 완전 전환. 비용 90% 절감, 기간 1/4로 단축.</p><div class="tags"><span class="chip">LLM</span><span class="chip">HITL</span><span class="chip">Python</span></div></div>
-</a>
+  <div class="wrap">
+    <p class="reveal"><a href="/projects" style="font-size:14px;color:var(--text-3)">← Projects</a></p>
+    <div class="sec-label reveal" style="margin-top:14px;">Side Project</div>
+    <h2 class="reveal">3D RMS <span class="badge">진행 중</span></h2>
+    <p class="meta reveal">개인 프로젝트 · Power Platform · 3D 어패럴 디자인 요청관리 시스템</p>
+    <p class="lede reveal">3D 의류 디자인 협업에서는 요청이 메일과 파일로 흩어져 무엇이 빠졌는지 추적하기 어렵습니다. 요청 접수부터 필수 파일 체크, 상태 평가, 알림까지를 하나의 흐름으로 묶은 요청관리 시스템(Request Management System)입니다. 사람이 눈으로 챙기던 확인 작업을 규칙과 플로우로 옮겼습니다.</p>
+    <div class="flow-scroll reveal" style="margin-top:40px;">
+      <div class="flow">
+        <div class="node">요청 접수<span class="sub">PLM 임포트</span></div><div class="arrow"></div>
+        <div class="node">파일<br>체크리스트</div><div class="arrow"></div>
+        <div class="node">상태 평가<span class="sub">누락·지연</span></div><div class="arrow"></div>
+        <div class="node hl">알림<br>· 대시보드</div>
+      </div>
     </div>
-  </div>
-</section>
-<hr class="divider">
-<section>
-  <div class="wrap wide">
-    <div class="sec-label reveal">Side Projects</div>
-    <h2 class="reveal">개인적으로 만들고 있는 것들</h2>
-    <p class="lede reveal">회사 밖에서, 필요해서 직접 만들고 다듬는 중인 프로젝트입니다. 데스크톱 앱부터 게임, 워크플로우 자동화까지.</p>
-    <div class="pcards three reveal" style="margin-top:36px;">
-      <a class="pcard" href="/projects/office-oasis">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">청소</span><span class="m">런처</span><span class="m">노트</span><span class="m hl">클립보드</span></div></div>
-  <div class="body"><div class="no">데스크톱 앱</div><h3>Office Oasis · 데스크톱 어시스턴트</h3><p>디스크 청소·도구 런처·노트·클립보드를 트레이 아이콘 하나로. 모든 처리는 본인 PC에서, 외부 전송 없이.</p><div class="tags"><span class="chip">Electron</span><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Tailwind</span></div></div>
-</a>
-      <a class="pcard" href="/projects/oracle">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">질문</span><span class="a">→</span><span class="m">AI 예/아니오</span><span class="a">→</span><span class="m hl">정답</span></div></div>
-  <div class="body"><div class="no">게임 · AI · 진행 중</div><h3>AI 키워드 추론 게임</h3><p>숨겨진 키워드를 Claude에게 자연어로 질문해 예/아니오 힌트로 맞히는 게임. NHN 해커톤 출품작.</p><div class="tags"><span class="chip">React</span><span class="chip">Cloudflare</span><span class="chip">Claude SDK</span><span class="chip">Hono</span></div></div>
-</a>
-      <a class="pcard" href="/projects/3d-rms">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">요청</span><span class="a">→</span><span class="m">체크</span><span class="a">→</span><span class="m hl">상태·알림</span></div></div>
-  <div class="body"><div class="no">Power Platform · 진행 중</div><h3>3D RMS</h3><p>3D 어패럴 디자인 요청을 접수·체크·모니터링하는 요청관리 시스템. PLM·CLO-SET·SharePoint 연동.</p><div class="tags"><span class="chip">Power Apps</span><span class="chip">Power Automate</span><span class="chip">Power BI</span><span class="chip">SharePoint</span></div></div>
-</a>
+    <div class="cards c3 reveal" style="margin-top:32px;">
+      <div class="card"><h3 class="plain">자동 체크리스트</h3><p>요청 유형별 필수 파일·항목을 규칙으로 판별해 누락을 표시</p></div>
+      <div class="card"><h3 class="plain">상태·리드타임</h3><p>대기·누락 건과 처리 기간을 Power BI로 가시화</p></div>
+      <div class="card"><h3 class="plain">시스템 연동</h3><p>PLM(Centric)·CLO-SET·SharePoint·Outlook을 Power Automate로 연결</p></div>
     </div>
+    <div class="reveal" style="margin-top:44px;">
+      <div class="sec-label">Stack</div>
+      <div class="tags" style="margin-top:6px; display:flex; gap:6px; flex-wrap:wrap;">
+        <span class="chip">Power Apps</span><span class="chip">Power Automate</span><span class="chip">Power BI</span><span class="chip">SharePoint</span>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:48px;"><a class="btn ghost" href="/projects">← 모든 프로젝트</a></div>
   </div>
 </section>
 </main>
