@@ -130,6 +130,15 @@ p { margin: 0 0 16px; }
 .pcards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 .pcards.three { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 900px) { .pcards.three { grid-template-columns: 1fr; } }
+/* single-column list: horizontal cards (preview left, text right) */
+.pcards.list { grid-template-columns: 1fr; gap: 18px; }
+.pcards.list .pcard { display: grid; grid-template-columns: 320px 1fr; min-height: 208px; }
+.pcards.list .pcard .thumb, .pcards.list .pcard .ptile { aspect-ratio: auto; height: 100%; border-bottom: 0; border-right: 1px solid var(--border); }
+.pcards.list .pcard .body { align-self: center; padding: 24px 30px; }
+@media (max-width: 680px) {
+  .pcards.list .pcard { grid-template-columns: 1fr; min-height: 0; }
+  .pcards.list .pcard .thumb, .pcards.list .pcard .ptile { aspect-ratio: 16/9; height: auto; border-right: 0; border-bottom: 1px solid var(--border); }
+}
 .pcard { display: block; background: var(--card); border: 1px solid var(--border-2); border-radius: 16px; overflow: hidden; transition: transform .25s, border-color .25s; }
 .pcard:hover { transform: translateY(-4px); border-color: rgba(49,130,246,0.4); }
 .pcard .thumb { aspect-ratio: 16/9; overflow: hidden; background: #05060a; border-bottom: 1px solid var(--border); }
