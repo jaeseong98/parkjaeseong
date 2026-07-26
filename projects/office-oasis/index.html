@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Office Oasis | 박재성</title>
-<meta name="description" content="직장인 PC를 위한 데스크톱 어시스턴트 · 청소·런처·노트·클립보드">
+<meta name="description" content="직장인 PC를 위한 데스크톱 어시스턴트 · 청소·런처·노트·클립보드·식단 (진행 중)">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/styles.css">
@@ -14,27 +14,50 @@
 <canvas id="bg-net" class="bg-net"></canvas>
 <nav class="nav"><div class="menu"><a href="/" class="">Home</a><a href="/projects" class="active">Projects</a><a href="/resume" class="">Resume</a><a href="/deck" class="">Deck</a><a href="/links" class="">Links</a></div></nav>
 <main class="page">
-<section>
+<section style="padding-bottom:40px;">
   <div class="wrap">
     <p class="reveal"><a href="/projects" style="font-size:14px;color:var(--text-3)">← Projects</a></p>
     <div class="sec-label reveal" style="margin-top:14px;">Side Project</div>
-    <h2 class="reveal">Office Oasis <span class="grad">· 데스크톱 어시스턴트</span></h2>
+    <h2 class="reveal">Office Oasis <span class="grad">· 데스크톱 어시스턴트</span> <span class="badge">진행 중</span></h2>
     <p class="meta reveal">개인 프로젝트 · Electron 데스크톱 앱 · 직장인 PC를 위한 트레이 유틸리티</p>
-    <p class="lede reveal">매일 쓰는 PC에서 반복적으로 아쉬웠던 네 가지, 쌓이는 파일 정리와 자주 여는 도구, 짧은 메모, 복사 기록을 트레이 아이콘 하나에 모았습니다. 모든 분석과 저장은 본인 PC 안에서만 일어나고 밖으로 나가지 않습니다.</p>
-    <div class="cards c2 reveal" style="margin-top:40px;">
+    <p class="lede reveal">매일 쓰는 PC에서 반복적으로 아쉬웠던 것들, 쌓이는 파일 정리와 자주 여는 도구, 짧은 메모, 복사 기록, 그리고 매일 확인하는 구내식당 식단까지 트레이 아이콘 하나에 모았습니다. 모든 분석과 저장은 본인 PC 안에서만 일어나고 밖으로 나가지 않습니다.</p>
+    <div class="hero-shot reveal">
+      <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/oasis-clean.png" alt="Office Oasis 청소 대시보드"></div>
+      <p class="cap">바탕화면 대청소. 정리할 폴더를 고르고 스캔하면 거대·오래된·중복·임시 파일과 빈 폴더를 찾아 한 번에 휴지통으로 옮깁니다.</p>
+    </div>
+  </div>
+</section>
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-label reveal">기능</div>
+    <div class="cards c2 reveal" style="margin-top:8px;">
       <div class="card"><h3 class="plain">디스크 청소</h3><p>거대·묵은 파일, 중복, 스크린샷, 임시 파일, 빈 폴더를 자동으로 분류해 휴지통으로 정리합니다.</p></div>
       <div class="card"><h3 class="plain">도구 런처</h3><p>자주 쓰는 앱·웹·폴더·파일을 타일 그리드로. 시작메뉴를 자동 검색해 등록합니다.</p></div>
       <div class="card"><h3 class="plain">노트</h3><p>사이드바로 여러 노트를 관리하고 자동 저장. 어디서든 Ctrl+Shift+N.</p></div>
       <div class="card"><h3 class="plain">클립보드 매니저</h3><p>최근 복사한 200개를 기록해 다시 꺼내 씁니다. Ctrl+Shift+V.</p></div>
+      <div class="card"><h3 class="plain">구내식당 식단</h3><p>사내 식단 블로그를 자동으로 가져와 주간 식단표를 앱에서 바로 확인합니다.</p></div>
     </div>
-    <div class="reveal" style="margin-top:44px;">
+    <div class="reveal" style="margin-top:52px;">
+      <div class="sec-label">Screens</div>
+      <div class="shots">
+        <div>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/oasis-launcher.png" alt="Office Oasis 도구 런처"></div>
+          <p class="cap">도구 런처. 앱·웹·폴더를 타일로 모아 카테고리별로 두고, 시계와 검색으로 빠르게 실행합니다.</p>
+        </div>
+        <div>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/oasis-meal.png" alt="Office Oasis 구내식당 식단표"></div>
+          <p class="cap">구내식당 식단. 사내 식단 블로그를 주기적으로 크롤링해 이번 주 식단표를 앱 안에서 바로 보여줍니다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:52px;">
       <div class="sec-label">Build · Delivery</div>
       <p class="muted">GitHub Actions로 Windows·macOS·Linux 3개 OS 인스톨러를 한 번에 빌드하고, 사용자 앱이 실행될 때 자동으로 업데이트됩니다. 로컬 전용 설계라 서버가 필요 없습니다.</p>
       <div class="tags" style="margin-top:14px; display:flex; gap:6px; flex-wrap:wrap;">
         <span class="chip">Electron</span><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Tailwind</span><span class="chip">electron-builder</span>
       </div>
     </div>
-    <div class="reveal" style="margin-top:48px;"><a class="btn ghost" href="/projects/oracle">다음: AI 키워드 추론 게임 →</a></div>
+    <div class="reveal" style="margin-top:48px;"><a class="btn ghost" href="/projects">← 모든 프로젝트</a></div>
   </div>
 </section>
 </main>
