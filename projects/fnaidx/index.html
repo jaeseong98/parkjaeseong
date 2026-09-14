@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FnAIDX | 박재성</title>
-<meta name="description" content="지수 개발 방법론의 AI 전환, 상장 심사 진행 중">
+<meta name="description" content="지수 개발 방법론의 AI 전환, 2026년 8월 실제 상장, 방법론 특허 출원">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/styles.css">
@@ -39,7 +39,7 @@
     </div>
     <div class="reveal" style="margin-top:52px;">
       <div class="sec-label">Solution · Pipeline</div>
-      <p class="muted">뉴스·공시·리포트를 수집해 테마를 정의하고, LLM으로 기업 개요를 생성한 뒤, 임베딩 유사도로 후보 종목을 넓게 찾고, 마지막으로 LLM이 근거와 함께 검증합니다. 후보를 넓게 찾고 검증으로 좁히는 구조입니다.</p>
+      <p class="muted">뉴스·공시·리포트를 수집해 테마를 정의하고, LLM으로 기업 개요를 생성한 뒤, 임베딩 유사도로 후보 종목을 넓게 찾고, 마지막으로 LLM이 근거와 함께 검증합니다. 후보를 넓게 찾고 검증으로 좁히는 구조입니다. 단어 빈도만 세던 기존 방식은 방산이 주력인 회사와 방산을 검토만 하는 회사를 구분하지 못했습니다. 새 방식은 임베딩 유사도 점수와 LLM이 근거와 함께 매긴 관련도 점수를 곱해, 두 조건을 동시에 만족하는 종목만 높은 점수를 받게 했습니다. 이 방법은 2026년 8월 특허로 출원했습니다.</p>
       <div class="flow-scroll">
         <div class="flow">
           <div class="node">데이터<br>수집</div><div class="arrow"></div>
@@ -52,7 +52,7 @@
       <div class="cards c3" style="margin-top:26px;">
         <div class="card"><h3 class="plain">API 서빙</h3><p>파이프라인 전 기능을 FastAPI 기반 REST API로 개발</p></div>
         <div class="card"><h3 class="plain">화면 연동</h3><p>React 프론트엔드에서 실험 설정부터 결과 확인까지</p></div>
-        <div class="card"><h3 class="plain">배포·운영</h3><p>Linux 서버에서 Docker 기반으로 직접 배포하고 운영</p></div>
+        <div class="card"><h3 class="plain">배포·운영</h3><p>사내 서버와 GPU 서버에 Docker와 GitLab CI로 배포하고 운영</p></div>
       </div>
     </div>
     <div class="reveal" style="margin-top:52px;">
@@ -70,12 +70,13 @@
     </div>
     <div class="reveal" style="margin-top:52px;">
       <div class="sec-label">Result</div>
-      <h2 style="font-size:clamp(1.4rem,3vw,2rem);">AI로 개발한 지수가 <span class="grad">상장 심사</span>를 진행하고 있습니다</h2>
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem);">AI로 개발한 지수가 <span class="grad">실제 상장</span>되었습니다</h2>
       <div class="grid-split" style="margin-top:24px;">
         <div class="cards" style="gap:14px;">
-          <div class="card hi"><h3>상장 심사 진행 중</h3><p>AI 전환 방법론으로 개발한 지수가 상장 심사를 진행하고 있습니다. 통과하면 이후의 지수들도 같은 방식으로 개발됩니다.</p></div>
+          <div class="card hi"><h3>2026년 8월 실제 상장</h3><p>이 방법론으로 만든 지수가 2026년 8월 실제로 상장되어 운용되고 있습니다. 회사가 여러 해 기대해온 목표를 처음 이뤘고, 이후 지수 개발에도 같은 방식이 적용됩니다.</p></div>
+          <div class="card"><h3 class="plain">방법론 특허 출원</h3><p>임베딩 유사도와 LLM 검증 점수를 결합한 지수 산출 방법을 2026년 8월 특허로 출원했습니다. 공동 발명으로, 방법론 설계와 검증 체계 구현을 주도했습니다.</p></div>
           <div class="card"><h3 class="plain">fnindex.co.kr 개편</h3><p>기존 지수 정보 시스템을 플랫폼으로 개편하고, 인덱스개발팀과 고객이 메일로 주고받던 업무를 화면과 기능으로 옮겼습니다.</p></div>
-          <div class="card"><h3 class="plain">개발 속도와 운영</h3><p>지수 개발 속도가 눈에 띄게 빨라졌고, 유지·관리를 플랫폼이 담당하면서 팀은 만드는 일보다 판단하는 일에 집중하게 됐습니다.</p></div>
+          <div class="card"><h3 class="plain">개발 속도와 운영</h3><p>처리 시간을 약 2.7배 줄이고 반복 실행은 캐시로 23배 빨라졌습니다. 유지·관리를 플랫폼이 담당하면서 팀은 만드는 일보다 판단하는 일에 집중하게 됐습니다.</p></div>
         </div>
         <div>
           <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/img/perf.jpg" alt="지수 성과분석"></div>
@@ -83,7 +84,7 @@
         </div>
       </div>
     </div>
-    <div class="reveal" style="margin-top:48px;"><a class="btn ghost" href="/projects/theme">다음: 테마 대시보드 →</a></div>
+    <div class="reveal" style="margin-top:48px;"><a class="btn ghost" href="/projects/cs-agent">다음: 고객상담 AI 에이전트 →</a></div>
   </div>
 </section>
 </main>

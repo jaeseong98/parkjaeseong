@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projects | 박재성</title>
-<meta name="description" content="박재성의 프로젝트 · FnAIDX, 고객상담 AI 에이전트, 업종분류 자동화, 기업이벤트 고지 자동화, 테마 대시보드, 기업개요 생성">
+<title>업종분류 자동화 | 박재성</title>
+<meta name="description" content="전 상장사 업종분류 전수조사를 AI가 먼저 거르는 구조로, 검수 14일에서 3일로">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/styles.css">
@@ -16,49 +16,25 @@
 <main class="page">
 <section>
   <div class="wrap">
-    <div class="sec-label reveal">Work</div>
-    <h2 class="reveal">에프앤가이드에서 만든 것들</h2>
-    <p class="lede reveal">지수 개발을 AI로 전환하는 과정에서 설계하고 운영한 프로젝트입니다. 각 카드를 눌러 상세 내용을 볼 수 있습니다.</p>
-    <div class="pcards three reveal" style="margin-top:36px;">
-      <a class="pcard" href="/projects/fnaidx">
-  <div class="thumb"><img src="/assets/img/home.jpg" alt="FnAIDX"></div>
-  <div class="body"><div class="no">01 · FnAIDX</div><h3>AI 지수 개발 플랫폼</h3><p>테마 발굴부터 검증까지 수작업이던 지수 개발을 하나의 AI 파이프라인으로. 2026년 8월 실제 상장, 방법론 특허 출원.</p><div class="tags"><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">LLM</span><span class="chip">Docker</span></div></div>
-</a>
-      <a class="pcard" href="/projects/cs-agent">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">고객 질문</span><span class="a">→</span><span class="m">매뉴얼 검색</span><span class="a">→</span><span class="m hl">답변·연결</span></div></div>
-  <div class="body"><div class="no">02 · 고객상담 AI</div><h3>고객상담 AI 에이전트</h3><p>외부 상담 플랫폼의 유료 AI 상담을 자체 RAG 에이전트로 대체. AI 처리 비중 30%에서 50% 이상, 정답셋 기준 정확도 90% 이상.</p><div class="tags"><span class="chip">RAG</span><span class="chip">Vector DB</span><span class="chip">LLM</span><span class="chip">FastAPI</span></div></div>
-</a>
-      <a class="pcard" href="/projects/sector">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">공시</span><span class="a">→</span><span class="m">LLM 후보</span><span class="a">→</span><span class="m hl">코드 집계·확정</span></div></div>
-  <div class="body"><div class="no">03 · 업종분류 자동화</div><h3>업종분류 전수조사 자동화</h3><p>전 상장사 2,769종목 업종분류 검수를 AI가 먼저 거르는 구조로. 검수 14일에서 3일, 수정 200건에서 10건으로.</p><div class="tags"><span class="chip">LLM</span><span class="chip">Python</span><span class="chip">교차검증</span><span class="chip">검수 도구</span></div></div>
-</a>
-      <a class="pcard" href="/projects/ca">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">이벤트 탐지</span><span class="a">→</span><span class="m">조회·분석</span><span class="a">→</span><span class="m hl">메일 초안</span></div></div>
-  <div class="body"><div class="no">04 · 기업이벤트 고지</div><h3>기업이벤트 고지 자동화</h3><p>지수 편입 종목의 유상증자 등 이벤트를 자동 탐지해 고지 메일 초안까지. 매일 약 3시간 걸리던 일을 1시간 이내로.</p><div class="tags"><span class="chip">FastAPI</span><span class="chip">MSSQL</span><span class="chip">파이프라인</span><span class="chip">운영</span></div></div>
-</a>
-      <a class="pcard" href="/projects/theme">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">뉴스·공시</span><span class="a">→</span><span class="m">LLM 추출</span><span class="a">→</span><span class="m hl">테마 발굴</span></div></div>
-  <div class="body"><div class="no">05 · 테마 대시보드</div><h3>테마 대시보드 구축</h3><p>뉴스·공시·리포트에서 LLM으로 테마를 추출해 부상 중인 테마를 선제 발굴. 풀스택 단독 수행.</p><div class="tags"><span class="chip">LLM</span><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">DB</span></div></div>
-</a>
-      <a class="pcard" href="/projects/overview">
-  <div class="ptile"><span class="gt"></span><div class="mini"><span class="m">공시</span><span class="a">→</span><span class="m">LLM 생성</span><span class="a">→</span><span class="m hl">검증</span></div></div>
-  <div class="body"><div class="no">06 · 기업개요 생성</div><h3>AI 기반 기업개요 생성</h3><p>네이버증권 제공 기업개요를 사람에서 AI로 완전 전환. 비용 90% 절감, 기간 1/4로 단축.</p><div class="tags"><span class="chip">LLM</span><span class="chip">HITL</span><span class="chip">Python</span></div></div>
-</a>
+    <p class="reveal"><a href="/projects" style="font-size:14px;color:var(--text-3)">← Projects</a></p>
+    <div class="sec-label reveal" style="margin-top:14px;">Project 03</div>
+    <h2 class="reveal">업종분류 전수조사 자동화</h2>
+    <p class="meta reveal">반기마다 코스피·코스닥 전 종목 업종분류 검수 · 아키텍처는 인덱스개발팀과 설계, 개발 전담</p>
+    <p class="lede reveal">회사는 반기마다 상장사 전 종목의 업종분류를 다시 검토합니다. 담당자가 공시를 열어 매출 비중을 손으로 계산하고 분류를 바꿀지 판단하는 일이 종목마다 반복됐습니다. AI가 공시를 읽어 업종 후보를 근거와 함께 제시하고, 매출 집계와 최종 판정은 파이썬 코드가 맡는 구조로 다시 만들었습니다. 사업 개요와 매출 현황을 각각 근거로 삼는 두 모델의 판단이 일치하면 신뢰, 갈리면 검토 신호로 삼는 교차검증을 넣었고, 담당자가 근거를 보고 확정하는 검수 웹 도구까지 만들었습니다.</p>
+    <div class="flow-scroll reveal" style="margin-top:40px;">
+      <div class="flow">
+        <div class="node">공시<br>수집</div><div class="arrow"></div>
+        <div class="node">LLM 후보<span class="sub">근거 인용</span></div><div class="arrow"></div>
+        <div class="node">집계·교차검증<span class="sub">코드</span></div><div class="arrow"></div>
+        <div class="node hl">담당자<br>확정</div>
+      </div>
     </div>
-  </div>
-</section>
-<hr class="divider">
-<section>
-  <div class="wrap">
-    <div class="sec-label reveal">Side Projects</div>
-    <h2 class="reveal">개인적으로 만들고 있는 것</h2>
-    <p class="lede reveal">회사 밖에서, 필요해서 직접 만들고 다듬는 중인 프로젝트입니다.</p>
-    <div class="pcards reveal" style="margin-top:36px;">
-      <a class="pcard" href="/projects/office-oasis">
-  <div class="thumb"><img src="/assets/img/oasis-clean.png" alt="Office Oasis 청소 대시보드"></div>
-  <div class="body"><div class="no">데스크톱 앱 · 진행 중</div><h3>Office Oasis · 데스크톱 어시스턴트</h3><p>디스크 청소·도구 런처·노트·클립보드·구내식당 식단을 트레이 아이콘 하나로. 모든 처리는 본인 PC에서, 외부 전송 없이.</p><div class="tags"><span class="chip">Electron</span><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Tailwind</span></div></div>
-</a>
+    <div class="cards c3 reveal" style="margin-top:32px;">
+      <div class="card hi"><h3>검수 14일 → 3일</h3><p>전체 2,769종목 중 93%는 유지로 판정. 하루 200건씩 14일 걸리던 검수를 3일로</p></div>
+      <div class="card hi"><h3>수정 200건 → 10건</h3><p>담당자가 고친 건수가 200건에서 10건으로. AI가 걸러낸 결과의 정확도가 그만큼 높아짐</p></div>
+      <div class="card"><h3 class="plain">역할 분리 원칙</h3><p>숫자 계산까지 AI에 맡기면 오류를 통제할 수 없다고 판단해, AI는 후보 판단만 하고 계산·집계·확정은 코드가 담당</p></div>
     </div>
+    <div class="reveal" style="margin-top:48px;"><a class="btn ghost" href="/projects/ca">다음: 기업이벤트 고지 자동화 →</a></div>
   </div>
 </section>
 </main>
